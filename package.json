@@ -1,0 +1,19 @@
+{
+  "name": "n-hub",
+  "version": "1.0.0",
+  "description": "Implementação do projeto da disciplina de IHM.",
+  "main": "index.js",
+  "scripts": {
+      "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhtoshiaki/n-hub.git"
+  },
+  "author": "nhtoshiaki <nh_toshi.94@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhtoshiaki/n-hub/issues"
+  },
+  "homepage": "https://github.com/nhtoshiaki/n-hub#readme"
+}
