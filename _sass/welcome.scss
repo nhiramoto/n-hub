@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#slider {
+    background-color: red;
+    height: 100%;
+    width: 220%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: left 1.5s;
+
+    &.second {
+        transition: left 1s;
+        left: -110%;
+    }
+
+    #login_session {
+        background-color: green;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 49%;
+        top: 0;
+        left: 0;
+    }
+
+    #selection_session {
+        background-color: blue;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 49%;
+        top: 0;
+        left: 100%;
+    }
+}
