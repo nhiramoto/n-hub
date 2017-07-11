@@ -59,4 +59,4 @@ typings/
 
 # Sass
 .sass-cache/
-style/**.map
+**/*.map

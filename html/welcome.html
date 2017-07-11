@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <title>Bem vindo!</title>
     <link rel="stylesheet" href="../style/welcome.css">
+    <link rel="stylesheet" href="../style/mainStyle.css">
 </head>
 <body>
     <div id="slider">
         <div id="login_session">
-            <button id="btn1">Go to Selection.</button>
+            <form action="">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <h2>Login</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span>E-mail:</span></td>
+                        <td><input type="text" name="email" placeholder="exemplo@email.com" required></td>
+                    </tr>
+                    <tr>
+                        <td><span>Senha:</span></td>
+                        <td><input type="password" name="senha" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="reset" value="Limpar"></td>
+                        <td><input type="submit" value="Login"></td>
+                    </tr>
+                </table>
+            </form>
+            <button id="skip">Pular</button>
         </div>
         <div id="selection_session">
             <button id="btn2">Go to Login.</button>
