@@ -1,7 +1,17 @@
-document.getElementById('btn1').addEventListener('click', () => {
-    document.getElementById('slider').setAttribute('class', 'second');
-});
+var $ = require('jquery');
 
-document.getElementById('btn2').addEventListener('click', () => {
-    document.getElementById('slider').setAttribute('class', '');
+$(document).ready(() => {
+    $('#skip').click(() => {
+        $('#slider').addClass('second');
+    });
+    $('#loginForm').submit((event) => {
+        $('#message #title').text('Olá ' + $('#loginForm input[name="email"]').val() + '!');
+        $('#message p').text('Login efetuado com sucesso.');
+        $('#message').addClass('visible');
+        setTimeout(() => {
+            $('#message').removeClass('visible');
+        }, 3000);
+        $('#slider').addClass('second');
+        event.preventDefault();
+    });
 });

@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="../style/mainStyle.css">
 </head>
 <body>
+    <div id="message">
+        <span id="title">Título</span>
+        <p>Corpo da mensagem.</p>
+    </div>
     <div id="slider">
-        <div id="login_session">
-            <form action="">
+        <div id="loginSession">
+            <form action="" id="loginForm">
                 <table>
                     <tr>
                         <td colspan="2">
@@ -26,14 +30,26 @@
                     </tr>
                     <tr>
                         <td><input type="reset" value="Limpar"></td>
-                        <td><input type="submit" value="Login"></td>
+                        <td><input type="submit" value="Enviar"></td>
                     </tr>
                 </table>
             </form>
-            <button id="skip">Pular</button>
+            <button id="skip">Pular Login</button>
         </div>
-        <div id="selection_session">
-            <button id="btn2">Go to Login.</button>
+        <div id="selectionSession">
+            <div id="selectionContainer">
+                <h2>Seleção de Recursos</h2>
+                <p>Selecione os recursos que serão utilizados.</p>
+                <form action="" id="selectionForm">
+                    <input type="checkbox" name="resource" value="email">E-mail<br>
+                    <input type="checkbox" name="resource" value="chat">Chat<br>
+                    <input type="checkbox" name="resource" value="calendar">Caledário<br>
+                    <input type="checkbox" name="resource" value="news">Notícias<br>
+                    <input type="checkbox" name="resource" value="gps">GPS<br>
+                    <input type="checkbox" name="resource" value="weather">Previsão do Tempo<br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
         </div>
     </div>
 </body>

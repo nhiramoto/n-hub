@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    // overflow: hidden;
     font-family: Helvetica, Arial;
 }
 
@@ -9,52 +9,58 @@ form {
     input {
         width: 90%;
     }
+    input[type="text"], input[type="password"] {
+        box-shadow: inset 0 0 8px gray;
+    }
     input[type="reset"], input[type="submit"] {
         font-weight: bold;
         background: transparent;
         border-width: 2px;
         border-style: solid;
         width: auto;
+        box-shadow: 0 0 8px gray;
     }
     input[type="reset"] {
-        color: darkred;
-        border-color: darkred;
+        color: red;
+        border-color: red;
         transition: all .3s linear;
     }
     input[type="reset"]:hover {
         color: white;
-        background-color: darkred;
+        background-color: red;
         transition: all .1s linear;
     }
     input[type="submit"] {
-        color: darkgreen;
-        border-color: darkgreen;
+        color: green;
+        border-color: green;
         transition: all .3s linear;
     }
     input[type="submit"]:hover {
         color: white;
-        background-color: darkgreen;
+        background-color: green;
         transition: all .1s linear;
     }
 }
 
 #slider {
-    background-color: #343434;
+    background-color: gray;
     height: 100%;
     width: 220%;
     top: 0;
     left: 0;
     position: absolute;
     transition: left 1.5s;
+    z-index: -10;
 
     &.second {
         transition: left 1s;
         left: -100%;
     }
 
-    #login_session {
-        background-color: white;
+    #loginSession {
+        background: transparent;
         display: inline-block;
+        position: absolute;
         margin: 0;
         padding: 0;
         height: 100%;
@@ -63,11 +69,12 @@ form {
         left: 0;
 
         table {
+            background-color: white;
+            opacity: 0.85;
             padding: 10px;
             margin: auto;
             margin-top: 15%;
             width: 50%;
-            background-color: #eee;
             border-radius: 5px;
             box-shadow: 0 3px 8px #4a4a4a;
 
@@ -79,22 +86,31 @@ form {
                 text-align: center;
             }
         }
+
+        #skip {
+            cursor: pointer;
+            position: absolute;
+            display: inline-block;
+            top: 30px;
+            right: 30px;
+            background-color: white;
+        }
     }
 
-    #selection_session {
-        background-color: white;
+    #selectionSession {
+        background: transparent;
         display: inline-block;
+        position: absolute;
         margin: 0;
         padding: 0;
         height: 100%;
         width: 45.45%;
-        top: 0;
-        left: 100%;
-    }
-}
+        margin-top: 0;
+        margin-left: 45.45%;
 
-#skip {
-    position: fixed;
-    top: 30px;
-    right: 30px;
+        selectionContainer {
+            background-color: white;
+            opacity: .85;
+        }
+    }
 }
