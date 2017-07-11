@@ -4,7 +4,7 @@
   "description": "Implementação do projeto da disciplina de IHM.",
   "main": "index.js",
   "scripts": {
-      "start": "electron main.js"
+    "start": "electron main.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nhtoshiaki/n-hub/issues"
   },
-  "homepage": "https://github.com/nhtoshiaki/n-hub#readme"
+  "homepage": "https://github.com/nhtoshiaki/n-hub#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }
