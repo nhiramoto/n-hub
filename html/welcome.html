@@ -8,8 +8,8 @@
 </head>
 <body>
     <div id="message">
-        <span id="title">Título</span>
-        <p>Corpo da mensagem.</p>
+        <span id="msgtitle">Título</span><br>
+        <span id="msgbody">Corpo da mensagem.</span>
     </div>
     <div id="slider">
         <div id="loginSession">
@@ -17,7 +17,7 @@
                 <table>
                     <tr>
                         <td colspan="2">
-                            <h2>Login</h2>
+                            <h2 class="loginTitle">Login</h2>
                         </td>
                     </tr>
                     <tr>
@@ -26,28 +26,34 @@
                     </tr>
                     <tr>
                         <td><span>Senha:</span></td>
-                        <td><input type="password" name="senha" required></td>
+                        <td><input type="password" name="senha" id="password" required></td>
                     </tr>
                     <tr>
                         <td><input type="reset" value="Limpar"></td>
                         <td><input type="submit" value="Enviar"></td>
                     </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span class="link" id="register">Não possui conta?</span>
+                        </td>
+                    </tr>
                 </table>
             </form>
-            <button id="skip">Pular Login</button>
+            <button id="skip">Pular</button>
         </div>
         <div id="selectionSession">
+            <button id="back">Voltar para Login / Cadastro</button>
             <div id="selectionContainer">
                 <h2>Seleção de Recursos</h2>
                 <p>Selecione os recursos que serão utilizados.</p>
                 <form action="" id="selectionForm">
-                    <input type="checkbox" name="resource" value="email">E-mail<br>
-                    <input type="checkbox" name="resource" value="chat">Chat<br>
-                    <input type="checkbox" name="resource" value="calendar">Caledário<br>
-                    <input type="checkbox" name="resource" value="news">Notícias<br>
-                    <input type="checkbox" name="resource" value="gps">GPS<br>
-                    <input type="checkbox" name="resource" value="weather">Previsão do Tempo<br>
-                    <input type="submit" value="Enviar">
+                    <input type="checkbox" name="resource" value="email">E-mail</input><br>
+                    <input type="checkbox" name="resource" value="chat">Chat</input><br>
+                    <input type="checkbox" name="resource" value="calendar">Caledário</input><br>
+                    <input type="checkbox" name="resource" value="news">Notícias</input><br>
+                    <input type="checkbox" name="resource" value="gps">GPS</input><br>
+                    <input type="checkbox" name="resource" value="weather">Previsão do Tempo</input><br>
+                    <input type="submit" value="Enviar" id="submitSelection">
                 </form>
             </div>
         </div>

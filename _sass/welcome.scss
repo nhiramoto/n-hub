@@ -3,43 +3,7 @@ body {
     padding: 0;
     // overflow: hidden;
     font-family: Helvetica, Arial;
-}
-
-form {
-    input {
-        width: 90%;
-    }
-    input[type="text"], input[type="password"] {
-        box-shadow: inset 0 0 8px gray;
-    }
-    input[type="reset"], input[type="submit"] {
-        font-weight: bold;
-        background: transparent;
-        border-width: 2px;
-        border-style: solid;
-        width: auto;
-        box-shadow: 0 0 8px gray;
-    }
-    input[type="reset"] {
-        color: red;
-        border-color: red;
-        transition: all .3s linear;
-    }
-    input[type="reset"]:hover {
-        color: white;
-        background-color: red;
-        transition: all .1s linear;
-    }
-    input[type="submit"] {
-        color: green;
-        border-color: green;
-        transition: all .3s linear;
-    }
-    input[type="submit"]:hover {
-        color: white;
-        background-color: green;
-        transition: all .1s linear;
-    }
+    background-color: black;
 }
 
 #slider {
@@ -77,6 +41,12 @@ form {
             width: 50%;
             border-radius: 5px;
             box-shadow: 0 3px 8px #4a4a4a;
+            transition: margin-top .5s ease;
+
+            &.toregister {
+                transition: margin-top .3s ease;
+                margin-top: 8%;
+            }
 
             td span {
                 text-align: right;
@@ -84,6 +54,12 @@ form {
 
             h2 {
                 text-align: center;
+            }
+            input {
+                width: 90%;
+            }
+            input[type="reset"], input[type="submit"] {
+                width: auto;
             }
         }
 
@@ -94,6 +70,12 @@ form {
             top: 30px;
             right: 30px;
             background-color: white;
+            opacity: .8;
+            transition: box-shadow .5s ease;
+            &:hover {
+                transition: box-shadow .3s ease;
+                box-shadow: 0 3px 15px #252525;
+            }
         }
     }
 
@@ -108,9 +90,37 @@ form {
         margin-top: 0;
         margin-left: 45.45%;
 
-        selectionContainer {
+        #back {
+            cursor: pointer;
+            position: absolute;
+            display: inline-block;
+            top: 30px;
+            left: 30px;
             background-color: white;
+            opacity: .8;
+            transition: box-shadow .5s ease;
+            &:hover {
+                transition: box-shadow .3s ease;
+                box-shadow: 0 3px 15px #252525;
+            }
+        }
+
+        #selectionContainer {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 3px 8px #4a4a4a;
             opacity: .85;
+            text-align: left;
+            margin: auto;
+            padding: 10px;
+            width: 500px;
+            margin-top: 8%;
+
+            #selectionForm {
+                input {
+                    margin: 10px;
+                }
+            }
         }
     }
 }

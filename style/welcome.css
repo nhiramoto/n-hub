@@ -1,35 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial; }
-
-form input {
-  width: 90%; }
-form input[type="text"], form input[type="password"] {
-  box-shadow: inset 0 0 8px gray; }
-form input[type="reset"], form input[type="submit"] {
-  font-weight: bold;
-  background: transparent;
-  border-width: 2px;
-  border-style: solid;
-  width: auto;
-  box-shadow: 0 0 8px gray; }
-form input[type="reset"] {
-  color: red;
-  border-color: red;
-  transition: all .3s linear; }
-form input[type="reset"]:hover {
-  color: white;
-  background-color: red;
-  transition: all .1s linear; }
-form input[type="submit"] {
-  color: green;
-  border-color: green;
-  transition: all .3s linear; }
-form input[type="submit"]:hover {
-  color: white;
-  background-color: green;
-  transition: all .1s linear; }
+  font-family: Helvetica, Arial;
+  background-color: black; }
 
 #slider {
   background-color: gray;
@@ -61,18 +34,31 @@ form input[type="submit"]:hover {
       margin-top: 15%;
       width: 50%;
       border-radius: 5px;
-      box-shadow: 0 3px 8px #4a4a4a; }
+      box-shadow: 0 3px 8px #4a4a4a;
+      transition: margin-top .5s ease; }
+      #slider #loginSession table.toregister {
+        transition: margin-top .3s ease;
+        margin-top: 8%; }
       #slider #loginSession table td span {
         text-align: right; }
       #slider #loginSession table h2 {
         text-align: center; }
+      #slider #loginSession table input {
+        width: 90%; }
+      #slider #loginSession table input[type="reset"], #slider #loginSession table input[type="submit"] {
+        width: auto; }
     #slider #loginSession #skip {
       cursor: pointer;
       position: absolute;
       display: inline-block;
       top: 30px;
       right: 30px;
-      background-color: white; }
+      background-color: white;
+      opacity: .8;
+      transition: box-shadow .5s ease; }
+      #slider #loginSession #skip:hover {
+        transition: box-shadow .3s ease;
+        box-shadow: 0 3px 15px #252525; }
   #slider #selectionSession {
     background: transparent;
     display: inline-block;
@@ -83,8 +69,29 @@ form input[type="submit"]:hover {
     width: 45.45%;
     margin-top: 0;
     margin-left: 45.45%; }
-    #slider #selectionSession selectionContainer {
+    #slider #selectionSession #back {
+      cursor: pointer;
+      position: absolute;
+      display: inline-block;
+      top: 30px;
+      left: 30px;
       background-color: white;
-      opacity: .85; }
+      opacity: .8;
+      transition: box-shadow .5s ease; }
+      #slider #selectionSession #back:hover {
+        transition: box-shadow .3s ease;
+        box-shadow: 0 3px 15px #252525; }
+    #slider #selectionSession #selectionContainer {
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 3px 8px #4a4a4a;
+      opacity: .85;
+      text-align: left;
+      margin: auto;
+      padding: 10px;
+      width: 500px;
+      margin-top: 8%; }
+      #slider #selectionSession #selectionContainer #selectionForm input {
+        margin: 10px; }
 
 /*# sourceMappingURL=welcome.css.map */
