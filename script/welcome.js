@@ -1,4 +1,6 @@
-var $ = require('jquery');
+const $ = require('jquery');
+const remote = require('electron').remote;
+const main = remote.require('./main.js');
 
 $(document).ready(() => {
     let isRegister = false;
@@ -84,8 +86,11 @@ $(document).ready(() => {
         setTimeout(() => {
             $('#message').removeClass('visible');
         }, 3000);
+        // Carrega dashboard.html após fadeOut
         setTimeout(() => {
-            $('#slider').fadeOut('slow');
+            $('#slider').fadeOut('slow', () => {
+                main.loadDashboard();
+            });
         }, 2000);
     });
 });

@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="../style/mainStyle.css">
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="../style/font-awesome.min.css">
+    <script>
+        require('../script/dashboard.js');
+    </script>
 </head>
 <body>
     <div id="message">
@@ -11,13 +17,19 @@
     </div>
     <div id="sidebar">
         <div id="menu">
-            <h2>Menu</h2>
-        </div>
-        <div id="nav">
+            <span class="header">Menu</span>
             <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
                 <li>Item 3</li>
+            </ul>
+        </div>
+        <div id="nav">
+            <ul>
+                <li class="active"><i class="fa fa-envelope" aria-hidden="true"></i></li>
+                <li><i class="fa fa-comments" aria-hidden="true"></i></li>
+                <li><i class="fa fa-calendar" aria-hidden="true"></i></li>
+                <li><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
             </ul>
         </div>
     </div>
