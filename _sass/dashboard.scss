@@ -7,8 +7,8 @@ body {
     font-family: Helvetica;
 }
 
-$sidebarWidth: 250px;
-$menuPercent: 0.8;
+$sidebarWidth: 350px;
+$menuPercent: 0.85;
 
 #sidebar {
     position: fixed;
@@ -19,6 +19,12 @@ $menuPercent: 0.8;
     width: $sidebarWidth;
     background-color: transparent;
     box-shadow: 3px 0 10px gray;
+    transition: left .3s ease;
+
+    &.hidden {
+        left: -($sidebarWidth * $menuPercent);
+        transition: left .5s ease;
+    }
 
     #menu {
         position: absolute;
@@ -92,6 +98,39 @@ $menuPercent: 0.8;
             cursor: pointer;
             text-shadow: 0 0 20px yellow;
             transition: text-shadow .3s ease;
+        }
+    }
+
+    #showSidebar {
+        position: absolute;
+        display: inline-block;
+        height: 15px;
+        width: 20px;
+        left: $sidebarWidth;
+        cursor: pointer;
+        margin: 10px;
+        padding: 10px;
+        background-color: transparent;
+        span {
+            // position: absolute;
+            background-color: black;
+            height: 2px;
+            border-radius: 3px;
+            margin-bottom: 5px;
+            display: block;
+            transition: all .5s ease;
+        }
+        &.hidden span:nth-child(2) {
+            width: 75%;
+            transition: with .3s ease;
+        }
+        &.hidden span:nth-child(3) {
+            width: 50%;
+            transition: with .3s ease;
+        }
+        &:hover span {
+            box-shadow: 0 0 15px blue;
+            transition: box-shadow .3s ease;
         }
     }
 
