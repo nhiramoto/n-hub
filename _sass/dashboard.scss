@@ -38,6 +38,17 @@ $menuPercent: 0.85;
         opacity: .8;
         user-select: none;
 
+        .resMenu {
+            display: none;
+            visibility: hidden;
+            transition: visibility .5s ease;
+        }
+        .active {
+            display: block;
+            visibility: visible;
+            transition: visibility .3s ease;
+        }
+
         .header {
             font-weight: bold;
             font-size: 26px;
