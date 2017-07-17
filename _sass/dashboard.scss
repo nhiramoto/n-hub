@@ -1,10 +1,12 @@
 @import '_mixins';
 
+$lightBackground: #F9F9F9;
+
 body {
     display: none;
     margin: 0;
     padding: 0;
-    font-family: Helvetica;
+    font-family: Vollkorn, Aller, Helvetica, Arial;
 }
 
 $sidebarWidth: 350px;
@@ -17,7 +19,7 @@ $menuPercent: 0.85;
     left: 0;
     height: 100%;
     width: $sidebarWidth;
-    background-color: transparent;
+    background-color: white;
     box-shadow: 3px 0 10px gray;
     transition: left .3s ease;
     z-index: 1;
@@ -36,7 +38,6 @@ $menuPercent: 0.85;
         padding: 10px;
         padding-right: 0;
         background-color: #afafaf;
-        opacity: .8;
         user-select: none;
 
         .resMenu {
@@ -66,7 +67,6 @@ $menuPercent: 0.85;
             font-size: 18px;
             background-color: #efefef;
             border-radius: 5px 0 0 5px;
-            opacity: .8;
             box-shadow: 0 0 5px #131313;
             transition: box-shadow .5s ease;
         }
@@ -92,7 +92,7 @@ $menuPercent: 0.85;
         ul li {
             list-style: none;
             display: block;
-            margin-top: 80px;
+            margin-top: 60px;
             font-size: 30px;
             height: 50px;
             line-height: 50px;
@@ -125,7 +125,7 @@ $menuPercent: 0.85;
         background-color: transparent;
         span {
             // position: absolute;
-            background-color: black;
+            background-color: white;
             height: 2px;
             border-radius: 3px;
             margin-bottom: 5px;
@@ -149,29 +149,65 @@ $menuPercent: 0.85;
 }
 
 #content {
-    background-color: blue;
     position: fixed;
     z-index: -1;
     width: 100%;
     height: 100%;
     margin-left: $sidebarWidth * (1 - $menuPercent);
 
+    .resContent {
+        display: none;
+        visibility: hidden;
+        transition: visibility .5s ease;
+    }
+
+    .active {
+        display: block;
+        visibility: visible;
+        transition: visibility .3s ease;
+    }
+
     .header {
+        position: absolute;
         width: 100%;
         height: 60px;
-        background-color: red;
-        text-align: center;
+        // text-align: center;
+        background-color: #171717;
+        color: white;
         margin: 0;
+        box-shadow: 0 3px 8px #131313;
+        font-size: 24px;
+        line-height: 60px;
         .title {
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 60px;
+            margin-left: 70px;
         }
+        .subtitle {
+            font-weight: 400;
+            // font-size: 24px;
+            // line-height: 60px;
+        }
+    }
+    .container {
+        disp7lay: none;
+        visibility: hidden;
+        position: absolute;
+        padding: 20px;
+        background-color: $lightBackground;
+        height: 100%;
+        width: 100%;
+        margin-top: 60px;
+        z-index: -1;
+        #resourcesForm input {
+            margin: 10px;
+        }
+    }
+    .active {
+        display: block;
+        visibility: visible;
     }
     .emailsList {
         width: 40%;
         height: 100%;
         margin: 0;
-        background-color: magenta;
     }
 }

@@ -17,12 +17,22 @@
     </div>
     <div id="sidebar" class="hidden">
         <div id="menu">
-            <div class="resMenu active" id="emailMenu">
+            <div class="resMenu active" id="settingsMenu">
+                <span class="header">Configurações</span>
+                <ul>
+                    <li id="accountBtn">Conta e Sincronização</li>
+                    <li id="resourcesBtn">Recursos</li>
+                    <li id="notificationsBtn">Notificações</li>
+                </ul>
+            </div>
+            <div class="resMenu" id="emailMenu">
                 <span class="header">E-mail</span>
                 <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
+                    <li>Entrada</li>
+                    <li>Enviados</li>
+                    <li>Rascunhos</li>
+                    <li>Spam</li>
+                    <li>Excluídos</li>
                 </ul>
             </div>
             <div class="resMenu" id="chatMenu">
@@ -52,7 +62,8 @@
         </div>
         <div id="nav">
             <ul>
-                <li class="active" id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
+                <li class="active" id="settingsBtn"><i class="fa fa-cog" aria-hidden="true"></i></li>
+                <li id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
                 <li id="chatBtn"><i class="fa fa-comments" aria-hidden="true"></i></li>
                 <li id="calendarBtn"><i class="fa fa-calendar" aria-hidden="true"></i></li>
                 <li id="newsBtn"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
@@ -65,18 +76,77 @@
         </div>
     </div>
     <div id="content">
-        <div id="emailContent">
-            <div class="header"><span class="title">Entrada</span></div>
-            <div class="emailsList">
-                <ul>
-                    <li>E-mail 1</li>
-                    <li>E-mail 2</li>
-                    <li>E-mail 3</li>
-                    <li>E-mail 4</li>
-                    <li>E-mail 5</li>
-                    <li>E-mail 6</li>
-                    <li>E-mail 7</li>
-                </ul>
+        <div class="resContent active" id="settingsContent">
+            <div class="header"><span class="title">Configurações</span> / <span class="subtitle">Conta e Sincronização</span></div>
+            <div class="container active" id="account">
+                <form action="" id="accountForm">
+                    <table>
+                        <tr>
+                            <td>Nome:</td>
+                            <td><input type="text" name="nome" placeholder="Nome"></td>
+                        </tr>
+                        <tr>
+                            <td>Nascimento:</td>
+                            <td><input type="date" name="nasc"></td>
+                        </tr>
+                        <tr>
+                            <td>E-mail:</td>
+                            <td><input type="email" name="email" placeholder="exemplo@email.com"></td>
+                        </tr>
+                        <tr>
+                            <td>Sincronizar configurações:</td>
+                            <td><input type="checkbox" name="sinc" checked></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="tableHeader">Alteração da senha</td>
+                        </tr>
+                        <tr>
+                            <td>Senha atual:</td>
+                            <td><input type="password" name="currentPassword"></td>
+                        </tr>
+                        <tr>
+                            <td>Nova Senha:</td>
+                            <td><input type="password" name="newPassword"></td>
+                        </tr>
+                        <tr>
+                            <td>Confirmação da nova senha:</td>
+                            <td><input type="password" name="confirmNewPassword"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" name="submit" value="Salvar"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="container" id="resources">
+                <form action="" id="resourcesForm">
+                    <input type="checkbox" name="resource" value="email">E-mail</input><br>
+                    <input type="checkbox" name="resource" value="chat">Chat</input><br>
+                    <input type="checkbox" name="resource" value="calendar">Caledário</input><br>
+                    <input type="checkbox" name="resource" value="news">Notícias</input><br>
+                    <input type="checkbox" name="resource" value="gps">GPS</input><br>
+                    <input type="checkbox" name="resource" value="weather">Previsão do Tempo</input><br>
+                    <input type="submit" value="Salvar">
+                </form>
+            </div>
+        </div>
+        <div class="resContent" id="emailContent">
+            <div class="header"><span class="title">E-mail</span> / <span class="subtitle">Entrada</span></div>
+            <div class="container">
+                <div class="emailsList">
+                    <ul>
+                        <li>E-mail 1</li>
+                        <li>E-mail 2</li>
+                        <li>E-mail 3</li>
+                        <li>E-mail 4</li>
+                        <li>E-mail 5</li>
+                        <li>E-mail 6</li>
+                        <li>E-mail 7</li>
+                    </ul>
+                </div>
+                <div class="emailViewer">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut cum blanditiis veniam, perferendis tempore fuga molestias neque ad enim velit vel porro magni, et repellendus quos harum, tempora labore delectus!
+                </div>
             </div>
         </div>
     </div>

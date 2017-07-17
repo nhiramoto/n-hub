@@ -2,6 +2,10 @@ table {
     td {
         padding: 5px;
     }
+    .tableHeader {
+        font-weight: bold;
+        text-align: center;
+    }
 }
 
 form {
@@ -12,7 +16,8 @@ form {
     }
     input[type="checkbox"] {
         -webkit-appearance: none;
-        border: 2px solid blue;
+        // border: 2px solid blue;
+        box-shadow: inset 0 0 8px gray;
         border-radius: 3px;
         position: relative;
         display: inline-block;
@@ -28,7 +33,7 @@ form {
         }
     }
 
-    input[type="text"], input[type="password"], input[type="date"] {
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
         box-shadow: inset 0 0 8px gray;
     }
     input[type="reset"], input[type="submit"] {

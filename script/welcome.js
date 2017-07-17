@@ -1,6 +1,7 @@
+const globals = require('./globals');
 const $ = require('jquery');
 const remote = require('electron').remote;
-const main = remote.require('./main.js');
+const main = remote.require('./main');
 
 $(document).ready(() => {
     let isRegister = false;
@@ -19,31 +20,14 @@ $(document).ready(() => {
         event.preventDefault();
         if ($('#confirmPassword').length) {
             if ($('#confirmPassword').val() != $('#password').val()) {
-                $('#message').addClass('error');
-                $('#message #msgtitle').text('Confirmação da senha');
-                $('#message #msgbody').text('As senhas não batem!');
-                $('#message').addClass('visible');
-                setTimeout(() => {
-                    $('#message').removeClass('visible');
-                    $('#message').removeClass('error');
-                }, 3000);
+                globals.showError('Confirmação da senha', 'As senhas não batem!');
             } else {
-                $('#message #msgtitle').text('Olá ' + $('#loginForm input[name="email"]').val() + '!');
-                $('#message #msgbody').text('Cadastro efetuado com sucesso.');
+                globals.showMessage('Olá ' + $('#loginForm input[name="email"]').val() + '!', 'Cadastro efetuado com sucesso.');
                 $('#slider').addClass('second');
-                $('#message').addClass('visible');
-                setTimeout(() => {
-                    $('#message').removeClass('visible');
-                }, 3000);
             }
         } else {
-            $('#message #msgtitle').text('Olá ' + $('#loginForm input[name="email"]').val() + '!');
-            $('#message #msgbody').text('Login efetuado com sucesso.');
+            globals.showMessage('Olá ' + $('#loginForm input[name="email"]').val() + '!', 'Login efetuado com sucesso.');
             $('#slider').addClass('second');
-            $('#message').addClass('visible');
-            setTimeout(() => {
-                $('#message').removeClass('visible');
-            }, 3000);
         }
     });
 
@@ -73,20 +57,8 @@ $(document).ready(() => {
     // Seleciona os recursos
     $('#selectionForm').submit((event) => {
         event.preventDefault();
-        // let checkedRes = new Array();
-        $('#message #msgtitle').text('Seleção de Recursos');
-        // $('#selectionForm :checkbox[name="resource"]').each((elem) => {
-        //     if ($(elem).is(':checked')) {
-        //         checkedRes.push($(elem).prop('checked'));
-        //     }
-        // });
-        // $('#message #msgbody').text(checkedRes.join('\r\n'));
-        $('#message #msgbody').text('Recursos selecionados com sucesso.');
-        $('#message').addClass('visible');
-        setTimeout(() => {
-            $('#message').removeClass('visible');
-        }, 3000);
-        // Carrega dashboard.html após fadeOut
+        globals.showMessage('Seleção de Recursos', 'Recursos selecionados com sucesso.');
+        // Carrega dashboard.ml após fadeOut
         setTimeout(() => {
             $('#slider').fadeOut('slow', () => {
                 main.loadDashboard();

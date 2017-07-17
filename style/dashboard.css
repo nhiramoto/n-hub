@@ -2,7 +2,7 @@ body {
   display: none;
   margin: 0;
   padding: 0;
-  font-family: Helvetica; }
+  font-family: Vollkorn, Aller, Helvetica, Arial; }
 
 #sidebar {
   position: fixed;
@@ -11,7 +11,7 @@ body {
   left: 0;
   height: 100%;
   width: 350px;
-  background-color: transparent;
+  background-color: white;
   box-shadow: 3px 0 10px gray;
   transition: left .3s ease;
   z-index: 1; }
@@ -27,7 +27,6 @@ body {
     padding: 10px;
     padding-right: 0;
     background-color: #afafaf;
-    opacity: .8;
     user-select: none; }
     #sidebar #menu .resMenu {
       display: none;
@@ -51,7 +50,6 @@ body {
       font-size: 18px;
       background-color: #efefef;
       border-radius: 5px 0 0 5px;
-      opacity: .8;
       box-shadow: 0 0 5px #131313;
       transition: box-shadow .5s ease; }
     #sidebar #menu ul li:hover {
@@ -72,7 +70,7 @@ body {
     #sidebar #nav ul li {
       list-style: none;
       display: block;
-      margin-top: 80px;
+      margin-top: 60px;
       font-size: 30px;
       height: 50px;
       line-height: 50px;
@@ -99,7 +97,7 @@ body {
     padding: 10px;
     background-color: transparent; }
     #sidebar #showSidebar span {
-      background-color: black;
+      background-color: white;
       height: 2px;
       border-radius: 3px;
       margin-bottom: 5px;
@@ -116,26 +114,51 @@ body {
       transition: box-shadow .3s ease; }
 
 #content {
-  background-color: blue;
   position: fixed;
   z-index: -1;
   width: 100%;
   height: 100%;
   margin-left: 52.5px; }
+  #content .resContent {
+    display: none;
+    visibility: hidden;
+    transition: visibility .5s ease; }
+  #content .active {
+    display: block;
+    visibility: visible;
+    transition: visibility .3s ease; }
   #content .header {
+    position: absolute;
     width: 100%;
     height: 60px;
-    background-color: red;
-    text-align: center;
-    margin: 0; }
+    background-color: #171717;
+    color: white;
+    margin: 0;
+    box-shadow: 0 3px 8px #131313;
+    font-size: 24px;
+    line-height: 60px; }
     #content .header .title {
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 60px; }
+      margin-left: 70px; }
+    #content .header .subtitle {
+      font-weight: 400; }
+  #content .container {
+    disp7lay: none;
+    visibility: hidden;
+    position: absolute;
+    padding: 20px;
+    background-color: #F9F9F9;
+    height: 100%;
+    width: 100%;
+    margin-top: 60px;
+    z-index: -1; }
+    #content .container #resourcesForm input {
+      margin: 10px; }
+  #content .active {
+    display: block;
+    visibility: visible; }
   #content .emailsList {
     width: 40%;
     height: 100%;
-    margin: 0;
-    background-color: magenta; }
+    margin: 0; }
 
 /*# sourceMappingURL=dashboard.css.map */
