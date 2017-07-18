@@ -45,26 +45,55 @@ $(document).ready(() => {
         $('#newsMenu').addClass('active');
     });
 
+    $('#sidebar #menu .resMenu li').click((event) => {
+        $('#sidebar').toggleClass('hidden');
+        $('#showSidebar').toggleClass('hidden');
+    });
+
     $('#accountBtn').click((event) => {
         if (!$('#account').hasClass('active')) {
             $('.container.active').removeClass('active');
             $('.container#account').addClass('active');
+            $('#settingsContent .header .subtitle').text('Conta e Sincronização');
         }
     });
     $('#resourcesBtn').click((event) => {
         if (!$('#resources').hasClass('active')) {
             $('.container.active').removeClass('active');
             $('.container#resources').addClass('active');
+            $('#settingsContent .header .subtitle').text('Recursos');
         }
     });
-    // notificationBtn...
+    $('#notificationsBtn').click((event) => {
+        if (!$('#notifications').hasClass('active')) {
+            $('.container.active').removeClass('active');
+            $('.container#notifications').addClass('active');
+            $('#settingsContent .header .subtitle').text('Notificações');
+        }
+    });
 
     $('#accountForm').submit((event) => {
         event.preventDefault();
-        globals.showMessage('Configurações de conta', 'Dados da conta alterados com sucesso.');
+        if ($('#newPassword').val().length === 0) {
+            globals.showMessage('Configurações de conta', 'Dados da conta alterados com sucesso.');
+        } else {
+            if ($('#currentPassword').val().length !== 0) {
+                if ($('#newPassword').val() == $('#confirmNewPassword').val()) {
+                    globals.showMessage('Nova senha', 'Nova senha registrada com sucesso.');
+                } else {
+                    globals.showMessage('Nova senha', 'As senhas não batem!');
+                }
+            } else {
+                globals.showMessage('Senha atual', 'Insira a senha atual para alterá-la.');
+            }
+        }
     });
     $('#resourcesForm').submit((event) => {
         event.preventDefault();
         globals.showMessage('Configurações de recursos', 'Recursos selecionados com sucesso.');
+    });
+    $('#notificationsForm').submit((event) => {
+        event.preventDefault();
+        globals.showMessage('Notificações de recursos', 'Notificações programadas com sucesso.');
     });
 });

@@ -17,7 +17,7 @@
     </div>
     <div id="sidebar" class="hidden">
         <div id="menu">
-            <div class="resMenu active" id="settingsMenu">
+            <div class="resMenu" id="settingsMenu">
                 <span class="header">Configurações</span>
                 <ul>
                     <li id="accountBtn">Conta e Sincronização</li>
@@ -25,7 +25,7 @@
                     <li id="notificationsBtn">Notificações</li>
                 </ul>
             </div>
-            <div class="resMenu" id="emailMenu">
+            <div class="resMenu active" id="emailMenu">
                 <span class="header">E-mail</span>
                 <ul>
                     <li>Entrada</li>
@@ -62,8 +62,8 @@
         </div>
         <div id="nav">
             <ul>
-                <li class="active" id="settingsBtn"><i class="fa fa-cog" aria-hidden="true"></i></li>
-                <li id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
+                <li id="settingsBtn"><i class="fa fa-cog" aria-hidden="true"></i></li>
+                <li class="active" id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
                 <li id="chatBtn"><i class="fa fa-comments" aria-hidden="true"></i></li>
                 <li id="calendarBtn"><i class="fa fa-calendar" aria-hidden="true"></i></li>
                 <li id="newsBtn"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
@@ -76,41 +76,41 @@
         </div>
     </div>
     <div id="content">
-        <div class="resContent active" id="settingsContent">
+        <div class="resContent" id="settingsContent">
             <div class="header"><span class="title">Configurações</span> / <span class="subtitle">Conta e Sincronização</span></div>
             <div class="container active" id="account">
                 <form action="" id="accountForm">
                     <table>
                         <tr>
                             <td>Nome:</td>
-                            <td><input type="text" name="nome" placeholder="Nome"></td>
+                            <td><input type="text" name="nome" placeholder="Nome" required></td>
                         </tr>
                         <tr>
                             <td>Nascimento:</td>
-                            <td><input type="date" name="nasc"></td>
+                            <td><input type="date" name="nasc" required></td>
                         </tr>
                         <tr>
                             <td>E-mail:</td>
-                            <td><input type="email" name="email" placeholder="exemplo@email.com"></td>
+                            <td><input type="email" name="email" placeholder="exemplo@email.com" required></td>
                         </tr>
                         <tr>
                             <td>Sincronizar configurações:</td>
-                            <td><input type="checkbox" name="sinc" checked></td>
+                            <td><input type="checkbox" name="sinc" checked required></td>
                         </tr>
                         <tr>
                             <td colspan="2" class="tableHeader">Alteração da senha</td>
                         </tr>
                         <tr>
                             <td>Senha atual:</td>
-                            <td><input type="password" name="currentPassword"></td>
+                            <td><input type="password" name="currentPassword" id="currentPassword"></td>
                         </tr>
                         <tr>
                             <td>Nova Senha:</td>
-                            <td><input type="password" name="newPassword"></td>
+                            <td><input type="password" name="newPassword" id="newPassword"></td>
                         </tr>
                         <tr>
                             <td>Confirmação da nova senha:</td>
-                            <td><input type="password" name="confirmNewPassword"></td>
+                            <td><input type="password" name="confirmNewPassword" id="confirmNewPassword"></td>
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" name="submit" value="Salvar"></td>
@@ -119,6 +119,7 @@
                 </form>
             </div>
             <div class="container" id="resources">
+                <p>Escolha os recursos que serão utilizados.</p>
                 <form action="" id="resourcesForm">
                     <input type="checkbox" name="resource" value="email">E-mail</input><br>
                     <input type="checkbox" name="resource" value="chat">Chat</input><br>
@@ -129,10 +130,22 @@
                     <input type="submit" value="Salvar">
                 </form>
             </div>
+            <div class="container" id="notifications">
+                <p>Escolha para quais recursos as notificações estão habilitadas.</p>
+                <form action="" id="notificationsForm">
+                    <input type="checkbox" name="resource" value="email">E-mail</input><br>
+                    <input type="checkbox" name="resource" value="chat">Chat</input><br>
+                    <input type="checkbox" name="resource" value="calendar">Caledário</input><br>
+                    <input type="checkbox" name="resource" value="news">Notícias</input><br>
+                    <input type="checkbox" name="resource" value="gps">GPS</input><br>
+                    <input type="checkbox" name="resource" value="weather">Previsão do Tempo</input><br>
+                    <input type="submit" value="Salvar">
+                </form>
+            </div>
         </div>
-        <div class="resContent" id="emailContent">
+        <div class="resContent active" id="emailContent">
             <div class="header"><span class="title">E-mail</span> / <span class="subtitle">Entrada</span></div>
-            <div class="container">
+            <div class="container active">
                 <div class="emailsList">
                     <ul>
                         <li>E-mail 1</li>

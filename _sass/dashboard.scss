@@ -13,7 +13,8 @@ $sidebarWidth: 350px;
 $menuPercent: 0.85;
 
 #sidebar {
-    position: fixed;
+    position: absolute;
+    float: left;
     margin: 0;
     padding: 0;
     left: 0;
@@ -149,10 +150,10 @@ $menuPercent: 0.85;
 }
 
 #content {
-    position: fixed;
+    position: absolute;
     z-index: -1;
-    width: 100%;
     height: 100%;
+    width: 100%;
     margin-left: $sidebarWidth * (1 - $menuPercent);
 
     .resContent {
@@ -171,7 +172,7 @@ $menuPercent: 0.85;
         position: absolute;
         width: 100%;
         height: 60px;
-        // text-align: center;
+        overflow: hidden;
         background-color: #171717;
         color: white;
         margin: 0;
@@ -188,26 +189,56 @@ $menuPercent: 0.85;
         }
     }
     .container {
-        disp7lay: none;
+        display: none;
         visibility: hidden;
         position: absolute;
-        padding: 20px;
         background-color: $lightBackground;
         height: 100%;
         width: 100%;
         margin-top: 60px;
+        padding: 20px;
         z-index: -1;
         #resourcesForm input {
             margin: 10px;
         }
+        #notificationsForm input {
+            margin: 10px;
+        }
     }
+    #emailContent .container {
+        padding: 0;
+        .emailsList {
+            display: inline-block;
+            position: absolute;
+            width: 30%;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 20px;
+            background-color: blue;
+            ul {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                list-style: none;
+                li {
+                    line-height: 30px;
+                }
+            }
+        }
+        .emailViewer {
+            display: inline-block;
+            position: absolute;
+            box-sizing: border-box;
+            margin-left: 30%;
+            width: 70%;
+            // float: right;
+            background-color: green;
+        }
+    }
+
     .active {
         display: block;
         visibility: visible;
-    }
-    .emailsList {
-        width: 40%;
-        height: 100%;
-        margin: 0;
     }
 }
