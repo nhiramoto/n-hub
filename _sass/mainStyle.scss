@@ -122,3 +122,28 @@ button {
     cursor: pointer;
     text-decoration: underline;
 }
+
+.chat-bubble {
+   position: relative;
+   width: 250px;
+   height: 120px;
+   line-height: 120px;
+   color: #FFFFFF;
+   text-align: center;
+   padding: 0px;
+   background: #858585;
+   border-radius: 10px;
+}
+
+.chat-bubble:after {
+   content: '';
+   position: absolute;
+   border-style: solid;
+   border-width: 21px 14px 0;
+   border-color: #858585 transparent;
+   display: block;
+   width: 0;
+   z-index: 1;
+   bottom: -21px;
+   left: 12px;
+}

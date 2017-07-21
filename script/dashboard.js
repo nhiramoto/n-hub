@@ -82,6 +82,28 @@ $(document).ready(() => {
     });
     // --- Settings menu ---
 
+    // --- E-mail ---
+    $('.resContent .resList li').click((event) => {
+        $('.resContent .resList li.selected').removeClass('selected');
+        $(event.target).addClass('selected');
+    });
+    $('#inboxBtn').click((event) => {
+        $('#emailContent .header .subtitle').text('Entrada');
+    });
+    $('#sentBtn').click((event) => {
+        $('#emailContent .header .subtitle').text('Enviados');
+    });
+    $('#draftsBtn').click((event) => {
+        $('#emailContent .header .subtitle').text('Rascunhos');
+    });
+    $('#spamBtn').click((event) => {
+        $('#email.content .header .subtitle').text('Spam');
+    });
+    $('#trashBtn').click((event) => {
+        $('#email.content .header .subtitle').text('Excluídos');
+    });
+    // --- E-mail ---
+
     $('#accountForm').submit((event) => {
         event.preventDefault();
         if ($('#newPassword').val().length === 0) {

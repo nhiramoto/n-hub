@@ -28,11 +28,11 @@
             <div class="resMenu active" id="emailMenu">
                 <span class="header">E-mail</span>
                 <ul>
-                    <li>Entrada</li>
-                    <li>Enviados</li>
-                    <li>Rascunhos</li>
-                    <li>Spam</li>
-                    <li>Excluídos</li>
+                    <li id="inboxBtn">Entrada</li>
+                    <li id="sentBtn">Enviados</li>
+                    <li id="draftsBtn">Rascunhos</li>
+                    <li id="spamBtn">Spam</li>
+                    <li id="trashBtn">Excluídos</li>
                 </ul>
             </div>
             <div class="resMenu" id="chatMenu">
@@ -146,20 +146,37 @@
         <div class="resContent active" id="emailContent">
             <div class="header"><span class="title">E-mail</span> / <span class="subtitle">Entrada</span></div>
             <div class="container active" id="emailInbox">
-                <div class="emailsList">
+                <div class="resList">
                     <ul>
-                        <li><span class="emailTitle">Email 1</span><br><span class="emailSender">Sender 1</span></li>
-                        <li><span class="emailTitle">Email 2</span><br><span class="emailSender">Sender 2</span></li>
-                        <li><span class="emailTitle">Email 3</span><br><span class="emailSender">Sender 3</span></li>
-                        <li><span class="emailTitle">Email 4</span><br><span class="emailSender">Sender 4</span></li>
-                        <li><span class="emailTitle">Email 5</span><br><span class="emailSender">Sender 5</span></li>
+                        <li><span class="itemTitle">Email 1</span><br><span class="itemContent">Sender 1</span></li>
+                        <li><span class="itemTitle">Email 2</span><br><span class="itemContent">Sender 2</span></li>
+                        <li><span class="itemTitle">Email 3</span><br><span class="itemContent">Sender 3</span></li>
+                        <li><span class="itemTitle">Email 4</span><br><span class="itemContent">Sender 4</span></li>
+                        <li><span class="itemTitle">Email 5</span><br><span class="itemContent">Sender 5</span></li>
                     </ul>
                 </div>
-                <div class="emailViewer">
+                <div class="resViewer">
                     <span class="emailTitle">Título do e-mail</span><br>
                     <span class="emailSenderLabel">De:</span> Remetente&lt;remetente@email.com&gt;<br>
                     <span class="emailRecipientLabel">Para:</span> Destinatário&lt;destinatario@email.com&gt;<br>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquam, non magnam assumenda odio debitis quod fuga aliquid voluptates praesentium, tempora laborum fugiat blanditiis veritatis maiores cupiditate nisi quasi dolores.</p>
+                </div>
+            </div>
+        </div>
+        <div class="resContent" id="chatContent">
+            <div class="header"><span class="title">Chat</span> / <span class="subtitle">Contatos</span></div>
+            <div class="container active" id="chatContacts">
+                <div class="resList">
+                    <ul>
+                        <li><span class="itemTitle">Contato 1</span><span class="itemContent">Lorem ipsum dolor ...</span></li>
+                        <li><span class="itemTitle">Contato 1</span><span class="itemContent">Lorem ipsum dolor ...</span></li>
+                        <li><span class="itemTitle">Contato 1</span><span class="itemContent">Lorem ipsum dolor ...</span></li>
+                        <li><span class="itemTitle">Contato 1</span><span class="itemContent">Lorem ipsum dolor ...</span></li>
+                        <li><span class="itemTitle">Contato 1</span><span class="itemContent">Lorem ipsum dolor ...</span></li>
+                    </ul>
+                </div>
+                <div class="resViewer">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat accusantium magni maxime, commodi explicabo iure assumenda aliquid laudantium incidunt fuga esse, adipisci, tempora voluptatum! Accusantium suscipit nulla ad deserunt beatae?
                 </div>
             </div>
         </div>

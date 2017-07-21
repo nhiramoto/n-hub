@@ -209,13 +209,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         #notificationsForm input {
             margin: 10px;
         }
-    }
-    #emailContent .container {
-        padding-left: $navWidth;
-        padding-top: 60px;
-        padding-right: 0;
-        padding-bottom: 0;
-        .emailsList {
+        .resList {
             display: inline-block;
             position: absolute;
             width: 30%;
@@ -238,22 +232,26 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                     background-color: white;
                     box-shadow: 0 3px 8px #131313;
                     transition: all .5s ease;
-                    .emailTitle {
+                    .itemTitle {
                         font-weight: bold;
                         font-size: 16px;
                     }
-                    .emailSender {
+                    .itemContent {
                         font-size: 14px;
                     }
                 }
                 li:hover {
                     cursor: pointer;
-                    background-color: #dfdfdf;
+                    background-color: #aeaeae;
+                    transition: all .3s ease;
+                }
+                li.selected {
+                    background-color: #0079FF;
                     transition: all .3s ease;
                 }
             }
         }
-        .emailViewer {
+        .resViewer {
             display: inline-block;
             position: absolute;
             box-sizing: border-box;
@@ -280,6 +278,12 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                 font-weight: bold;
             }
         }
+    }
+    #emailContent .container {
+        padding-left: $navWidth;
+        padding-top: 60px;
+        padding-right: 0;
+        padding-bottom: 0;
     }
 
     .active {
