@@ -70,17 +70,18 @@ button {
   left: 50%;
   margin-left: -100px;
   padding: 20px;
+  z-index: 10;
   transform: translateY(-100%);
   transition: transform .5s linear; }
   #message.error #msgtitle {
     color: red; }
   #message #msgtitle {
     font-weight: bold;
-    font-size: 16px; }
+    font-size: 18px; }
   #message br {
     line-height: 30px; }
   #message #msgbody {
-    font-size: 14px; }
+    font-size: 16px; }
 
 #message.visible {
   transform: translateY(0%);

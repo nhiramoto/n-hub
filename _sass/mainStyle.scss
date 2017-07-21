@@ -88,6 +88,7 @@ button {
     left: 50%;
     margin-left: -100px;
     padding: 20px;
+    z-index: 10;
     transform: translateY(-100%);
     transition: transform .5s linear;
 
@@ -97,13 +98,13 @@ button {
 
     #msgtitle {
         font-weight: bold;
-        font-size: 16px;
+        font-size: 18px;
     }
     br {
         line-height: 30px;
     }
     #msgbody {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 

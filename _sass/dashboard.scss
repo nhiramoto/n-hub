@@ -11,6 +11,7 @@ body {
 
 $sidebarWidth: 350px;
 $menuPercent: 0.85;
+$navWidth: $sidebarWidth * (1 - $menuPercent);
 
 #sidebar {
     position: absolute;
@@ -21,6 +22,7 @@ $menuPercent: 0.85;
     height: 100%;
     width: $sidebarWidth;
     background-color: white;
+    opacity: .95;
     box-shadow: 3px 0 10px #131313;
     transition: left .3s ease;
     z-index: 1;
@@ -150,17 +152,14 @@ $menuPercent: 0.85;
 }
 
 #content {
-    position: absolute;
     z-index: -1;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
 
     .resContent {
         display: none;
         visibility: hidden;
         transition: visibility .5s ease;
-        padding-left: $sidebarWidth * (1 - $menuPercent);
     }
 
     .active {
@@ -174,9 +173,11 @@ $menuPercent: 0.85;
         width: 100%;
         height: 60px;
         overflow: hidden;
+        box-sizing: border-box;
         background-color: #171717;
         color: white;
         margin: 0;
+        padding-left: $navWidth;
         box-shadow: 0 3px 8px #131313;
         font-size: 24px;
         line-height: 60px;
@@ -193,11 +194,14 @@ $menuPercent: 0.85;
         display: none;
         visibility: hidden;
         position: absolute;
+        box-sizing: border-box;
         background-color: $lightBackground;
         height: 100%;
         width: 100%;
-        margin-top: 60px;
-        padding: 20px;
+        padding-left: $navWidth + 20px;
+        padding-top: 80px;
+        padding-right: 20px;
+        padding-bottom: 20px;
         z-index: -1;
         #resourcesForm input {
             margin: 10px;
@@ -207,14 +211,19 @@ $menuPercent: 0.85;
         }
     }
     #emailContent .container {
-        padding: 0;
+        padding-left: $navWidth;
+        padding-top: 60px;
+        padding-right: 0;
+        padding-bottom: 0;
         .emailsList {
             display: inline-block;
             position: absolute;
             width: 30%;
-            height: 100%;
+            // height: 100%;
+            top: 60px;
+            bottom: 0;
             box-sizing: border-box;
-            margin: 0;
+            margin: 0;;
             background-color: #afafaf;
             overflow: auto;
             ul {
@@ -248,11 +257,14 @@ $menuPercent: 0.85;
             display: inline-block;
             position: absolute;
             box-sizing: border-box;
-            margin-left: 30%;
+            margin-left: $navWidth;
             padding: 20px;
-            width: 70%;
-            height: 100%;
-            // float: right;
+            // width: 70%;
+            // height: 100%;
+            top: 60px;
+            bottom: 0;
+            right: 0;
+            left: 30%;
             background-color: transparent;
             overflow: auto;
             font-size: 18px;
@@ -262,6 +274,9 @@ $menuPercent: 0.85;
                 line-height: 50px;
             }
             .emailSenderLabel {
+                font-weight: bold;
+            }
+            .emailRecipientLabel {
                 font-weight: bold;
             }
         }
