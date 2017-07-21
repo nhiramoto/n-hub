@@ -13,7 +13,7 @@ body {
   height: 100%;
   width: 350px;
   background-color: white;
-  box-shadow: 3px 0 10px gray;
+  box-shadow: 3px 0 10px #131313;
   transition: left .3s ease;
   z-index: 1; }
   #sidebar.hidden {
@@ -119,11 +119,12 @@ body {
   z-index: -1;
   height: 100%;
   width: 100%;
-  margin-left: 52.5px; }
+  box-sizing: border-box; }
   #content .resContent {
     display: none;
     visibility: hidden;
-    transition: visibility .5s ease; }
+    transition: visibility .5s ease;
+    padding-left: 52.5px; }
   #content .active {
     display: block;
     visibility: visible;
@@ -163,10 +164,11 @@ body {
       display: inline-block;
       position: absolute;
       width: 30%;
+      height: 100%;
       box-sizing: border-box;
       margin: 0;
-      padding: 20px;
-      background-color: blue; }
+      background-color: #afafaf;
+      overflow: auto; }
       #content #emailContent .container .emailsList ul {
         margin: 0;
         padding: 0;
@@ -174,14 +176,37 @@ body {
         height: 100%;
         list-style: none; }
         #content #emailContent .container .emailsList ul li {
-          line-height: 30px; }
+          margin: 10px;
+          padding: 10px;
+          background-color: white;
+          box-shadow: 0 3px 8px #131313;
+          transition: all .5s ease; }
+          #content #emailContent .container .emailsList ul li .emailTitle {
+            font-weight: bold;
+            font-size: 16px; }
+          #content #emailContent .container .emailsList ul li .emailSender {
+            font-size: 14px; }
+        #content #emailContent .container .emailsList ul li:hover {
+          cursor: pointer;
+          background-color: #dfdfdf;
+          transition: all .3s ease; }
     #content #emailContent .container .emailViewer {
       display: inline-block;
       position: absolute;
       box-sizing: border-box;
       margin-left: 30%;
+      padding: 20px;
       width: 70%;
-      background-color: green; }
+      height: 100%;
+      background-color: transparent;
+      overflow: auto;
+      font-size: 18px; }
+      #content #emailContent .container .emailViewer .emailTitle {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 50px; }
+      #content #emailContent .container .emailViewer .emailSenderLabel {
+        font-weight: bold; }
   #content .active {
     display: block;
     visibility: visible; }

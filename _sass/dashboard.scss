@@ -21,7 +21,7 @@ $menuPercent: 0.85;
     height: 100%;
     width: $sidebarWidth;
     background-color: white;
-    box-shadow: 3px 0 10px gray;
+    box-shadow: 3px 0 10px #131313;
     transition: left .3s ease;
     z-index: 1;
 
@@ -154,12 +154,13 @@ $menuPercent: 0.85;
     z-index: -1;
     height: 100%;
     width: 100%;
-    margin-left: $sidebarWidth * (1 - $menuPercent);
+    box-sizing: border-box;
 
     .resContent {
         display: none;
         visibility: hidden;
         transition: visibility .5s ease;
+        padding-left: $sidebarWidth * (1 - $menuPercent);
     }
 
     .active {
@@ -211,10 +212,11 @@ $menuPercent: 0.85;
             display: inline-block;
             position: absolute;
             width: 30%;
+            height: 100%;
             box-sizing: border-box;
             margin: 0;
-            padding: 20px;
-            background-color: blue;
+            background-color: #afafaf;
+            overflow: auto;
             ul {
                 margin: 0;
                 padding: 0;
@@ -222,7 +224,23 @@ $menuPercent: 0.85;
                 height: 100%;
                 list-style: none;
                 li {
-                    line-height: 30px;
+                    margin: 10px;
+                    padding: 10px;
+                    background-color: white;
+                    box-shadow: 0 3px 8px #131313;
+                    transition: all .5s ease;
+                    .emailTitle {
+                        font-weight: bold;
+                        font-size: 16px;
+                    }
+                    .emailSender {
+                        font-size: 14px;
+                    }
+                }
+                li:hover {
+                    cursor: pointer;
+                    background-color: #dfdfdf;
+                    transition: all .3s ease;
                 }
             }
         }
@@ -231,9 +249,21 @@ $menuPercent: 0.85;
             position: absolute;
             box-sizing: border-box;
             margin-left: 30%;
+            padding: 20px;
             width: 70%;
+            height: 100%;
             // float: right;
-            background-color: green;
+            background-color: transparent;
+            overflow: auto;
+            font-size: 18px;
+            .emailTitle {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 50px;
+            }
+            .emailSenderLabel {
+                font-weight: bold;
+            }
         }
     }
 

@@ -21,6 +21,10 @@ $(document).ready(() => {
 
             $('.resContent.active').removeClass('active');
             $('#settingsContent').addClass('active');
+
+            $('.container.active').removeClass('active');
+            $('.container#account').addClass('active');
+            $('#settingsContent .header .subtitle').text('Conta e Sincronização');
         }
     });
     $('#emailBtn').click((event) => {
@@ -30,6 +34,10 @@ $(document).ready(() => {
 
             $('.resContent.active').removeClass('active');
             $('#emailContent').addClass('active');
+
+            $('.container.active').removeClass('active');
+            $('.container#emailInbox').addClass('active');
+            $('#emailContent .header .subtitle').text('Entrada');
         }
     });
     $('#chatBtn').click((event) => {
@@ -50,6 +58,7 @@ $(document).ready(() => {
         $('#showSidebar').toggleClass('hidden');
     });
 
+    // --- Settings menu ---
     $('#accountBtn').click((event) => {
         if (!$('#account').hasClass('active')) {
             $('.container.active').removeClass('active');
@@ -71,6 +80,7 @@ $(document).ready(() => {
             $('#settingsContent .header .subtitle').text('Notificações');
         }
     });
+    // --- Settings menu ---
 
     $('#accountForm').submit((event) => {
         event.preventDefault();
@@ -96,4 +106,6 @@ $(document).ready(() => {
         event.preventDefault();
         globals.showMessage('Notificações de recursos', 'Notificações programadas com sucesso.');
     });
+
+    $('#emailBtn').trigger('click');
 });
