@@ -14,6 +14,7 @@ $(document).ready(() => {
         $('#showSidebar').toggleClass('hidden');
     });
 
+    // --- Nav Buttons ---
     $('#settingsBtn').click((event) => {
         if (!$('#settingsContent').hasClass('active')) {
             $('.resMenu.active').removeClass('active');
@@ -41,8 +42,17 @@ $(document).ready(() => {
         }
     });
     $('#chatBtn').click((event) => {
-        $('.resMenu.active').removeClass('active');
-        $('#chatMenu').addClass('active');
+        if (!$('#chatContent').hasClass('active')) {
+            $('.resMenu.active').removeClass('active');
+            $('#chatMenu').addClass('active');
+
+            $('.resContent.active').removeClass('active');
+            $('#chatContent').addClass('active');
+
+            $('.container.active').removeClass('active');
+            $('.container#chatContacts').addClass('active');
+            $('#chatContent .header .subtitle').text('Contatos');
+        }
     });
     $('#calendarBtn').click((event) => {
         $('.resMenu.active').removeClass('active');

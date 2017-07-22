@@ -28,7 +28,7 @@ body {
     width: 297.5px;
     padding: 10px;
     padding-right: 0;
-    background-color: #afafaf;
+    background-color: #AFAFAF;
     user-select: none; }
     #sidebar #menu .resMenu {
       display: none;
@@ -50,14 +50,17 @@ body {
       margin: 10px;
       margin-right: 0;
       font-size: 18px;
-      background-color: #efefef;
+      background-color: #EFEFEF;
       border-radius: 5px 0 0 5px;
       box-shadow: 0 0 5px #131313;
-      transition: box-shadow .5s ease; }
+      transition: background-color .5s ease;
+      cursor: pointer; }
     #sidebar #menu ul li:hover {
-      cursor: pointer;
-      box-shadow: 0 0 15px #131313;
-      transition: box-shadow .3s ease; }
+      background-color: #F5F688;
+      transition: background-color .3s ease; }
+    #sidebar #menu ul li.active {
+      background-color: #0079FF;
+      transition: background-color .3s ease; }
   #sidebar #nav {
     position: absolute;
     box-sizing: border-box;
@@ -72,21 +75,22 @@ body {
     #sidebar #nav ul li {
       list-style: none;
       display: block;
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 30px;
-      height: 50px;
-      line-height: 50px;
+      height: 60px;
+      line-height: 60px;
       text-align: center;
       border-radius: 0 5px 5px 0;
       user-select: none;
+      vertical-align: middle;
       transition: all .5s ease; }
     #sidebar #nav ul li.active {
-      background-color: #afafaf;
+      background-color: #AFAFAF;
       box-shadow: 2px 1px 3px #131313;
       transition: all .3s ease; }
     #sidebar #nav ul li:hover {
       cursor: pointer;
-      text-shadow: 0 0 20px yellow;
+      text-shadow: 0 0 20px #F5F688;
       transition: text-shadow .3s ease; }
   #sidebar #showSidebar {
     position: absolute;
@@ -112,7 +116,7 @@ body {
       width: 50%;
       transition: with .3s ease; }
     #sidebar #showSidebar:hover span {
-      box-shadow: 0 0 15px blue;
+      box-shadow: 0 0 15px #F5F688;
       transition: box-shadow .3s ease; }
 
 #content {
@@ -169,7 +173,7 @@ body {
       bottom: 0;
       box-sizing: border-box;
       margin: 0;
-      background-color: #afafaf;
+      background-color: #AFAFAF;
       overflow: auto; }
       #content .container .resList ul {
         margin: 0;
@@ -180,17 +184,23 @@ body {
         #content .container .resList ul li {
           margin: 10px;
           padding: 10px;
-          background-color: white;
+          background-color: #EEE;
           box-shadow: 0 3px 8px #131313;
           transition: all .5s ease; }
+          #content .container .resList ul li .avatar {
+            position: absolute;
+            font-size: 32px;
+            left: 30px; }
           #content .container .resList ul li .itemTitle {
+            margin-left: 50px;
             font-weight: bold;
             font-size: 16px; }
           #content .container .resList ul li .itemContent {
+            margin-left: 50px;
             font-size: 14px; }
         #content .container .resList ul li:hover {
           cursor: pointer;
-          background-color: #aeaeae;
+          background-color: #F5F688;
           transition: all .3s ease; }
         #content .container .resList ul li.selected {
           background-color: #0079FF;
@@ -216,7 +226,7 @@ body {
         font-weight: bold; }
       #content .container .resViewer .emailRecipientLabel {
         font-weight: bold; }
-  #content #emailContent .container {
+  #content #emailContent .container, #content #chatContent .container {
     padding-left: 52.5px;
     padding-top: 60px;
     padding-right: 0;

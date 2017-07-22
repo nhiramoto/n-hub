@@ -1,6 +1,13 @@
 @import '_mixins';
 
 $lightBackground: #F9F9F9;
+$hoverColor: #F5F688;
+$activeColor: #0079FF;
+$sidebarColor: #AFAFAF;
+$sidebarItemColor: #EFEFEF;
+$navBackgroundColor: #6a6a6a;
+$resListBackgroundColor: #AFAFAF;
+$resListItemColor: #EEE;
 
 body {
     display: none;
@@ -40,7 +47,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         width: $sidebarWidth * $menuPercent;
         padding: 10px;
         padding-right: 0;
-        background-color: #afafaf;
+        background-color: $sidebarColor;
         user-select: none;
 
         .resMenu {
@@ -68,15 +75,19 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             margin: 10px;
             margin-right: 0;
             font-size: 18px;
-            background-color: #efefef;
+            background-color: $sidebarItemColor;
             border-radius: 5px 0 0 5px;
             box-shadow: 0 0 5px #131313;
-            transition: box-shadow .5s ease;
+            transition: background-color .5s ease;
+            cursor: pointer;
         }
         ul li:hover {
-            cursor: pointer;
-            box-shadow: 0 0 15px #131313;
-            transition: box-shadow .3s ease;
+            background-color: $hoverColor;
+            transition: background-color .3s ease;
+        }
+        ul li.active {
+            background-color: $activeColor;
+            transition: background-color .3s ease;
         }
     }
 
@@ -86,7 +97,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         left: 100% * $menuPercent;
         height: 100%;
         width: 100% * (1 - $menuPercent);
-        background-color: #6a6a6a;
+        background-color: $navBackgroundColor;
         box-shadow: inset 1px 0 3px #131313;
         opacity: .8;
         ul {
@@ -95,23 +106,24 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         ul li {
             list-style: none;
             display: block;
-            margin-top: 60px;
+            margin-top: 50px;
             font-size: 30px;
-            height: 50px;
-            line-height: 50px;
+            height: 60px;
+            line-height: 60px;
             text-align: center;
             border-radius: 0 5px 5px 0;
             user-select: none;
+            vertical-align: middle;
             transition: all .5s ease;
         }
         ul li.active {
-            background-color: #afafaf;
+            background-color: $sidebarColor;
             box-shadow: 2px 1px 3px #131313;
             transition: all .3s ease;
         }
         ul li:hover {
             cursor: pointer;
-            text-shadow: 0 0 20px yellow;
+            text-shadow: 0 0 20px $hoverColor;
             transition: text-shadow .3s ease;
         }
     }
@@ -144,7 +156,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             transition: with .3s ease;
         }
         &:hover span {
-            box-shadow: 0 0 15px blue;
+            box-shadow: 0 0 15px $hoverColor;
             transition: box-shadow .3s ease;
         }
     }
@@ -218,7 +230,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             bottom: 0;
             box-sizing: border-box;
             margin: 0;;
-            background-color: #afafaf;
+            background-color: $resListBackgroundColor;
             overflow: auto;
             ul {
                 margin: 0;
@@ -229,24 +241,31 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                 li {
                     margin: 10px;
                     padding: 10px;
-                    background-color: white;
+                    background-color: $resListItemColor;
                     box-shadow: 0 3px 8px #131313;
                     transition: all .5s ease;
+                    .avatar {
+                        position: absolute;
+                        font-size: 32px;
+                        left: 30px;
+                    }
                     .itemTitle {
+                        margin-left: 50px;
                         font-weight: bold;
                         font-size: 16px;
                     }
                     .itemContent {
+                        margin-left: 50px;
                         font-size: 14px;
                     }
                 }
                 li:hover {
                     cursor: pointer;
-                    background-color: #aeaeae;
+                    background-color: $hoverColor;
                     transition: all .3s ease;
                 }
                 li.selected {
-                    background-color: #0079FF;
+                    background-color: $activeColor;
                     transition: all .3s ease;
                 }
             }
@@ -279,7 +298,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             }
         }
     }
-    #emailContent .container {
+    #emailContent .container, #chatContent .container {
         padding-left: $navWidth;
         padding-top: 60px;
         padding-right: 0;
