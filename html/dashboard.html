@@ -148,7 +148,7 @@
             <div class="container active" id="emailInbox">
                 <div class="resList">
                     <ul>
-                        <li>
+                        <li class="selected">
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
                             <span class="itemTitle">Email 1</span><br>
                             <span class="itemContent">Sender 1</span>
@@ -175,7 +175,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="resViewer">
+                <div class="resViewer" id="emailBody">
                     <span class="emailTitle">Título do e-mail</span><br>
                     <span class="emailSenderLabel">De:</span> Remetente&lt;remetente@email.com&gt;<br>
                     <span class="emailRecipientLabel">Para:</span> Destinatário&lt;destinatario@email.com&gt;<br>
@@ -188,7 +188,7 @@
             <div class="container active" id="chatContacts">
                 <div class="resList">
                     <ul>
-                        <li>
+                        <li class="selected">
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
                             <span class="itemTitle">Contato 1</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
@@ -216,7 +216,18 @@
                     </ul>
                 </div>
                 <div class="resViewer">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat accusantium magni maxime, commodi explicabo iure assumenda aliquid laudantium incidunt fuga esse, adipisci, tempora voluptatum! Accusantium suscipit nulla ad deserunt beatae?
+                    <div class="chatBox">
+                        <div class="chat-bubble-left">
+                            Lorem ipsum dolor sit amet.
+                        </div>
+                        <div class="chat-bubble-right">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                    <div class="messageInput">
+                        <input id="chatMessageInput" type="text" placeholder="Escreva a mensagem aqui...">
+                        <i id="chatSendBtn" class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>

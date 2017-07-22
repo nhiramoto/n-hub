@@ -14,7 +14,7 @@ $(document).ready(() => {
         $('#showSidebar').toggleClass('hidden');
     });
 
-    // --- Nav Buttons ---
+    // ------------- Nav Buttons -------------
     $('#settingsBtn').click((event) => {
         if (!$('#settingsContent').hasClass('active')) {
             $('.resMenu.active').removeClass('active');
@@ -62,13 +62,15 @@ $(document).ready(() => {
         $('.resMenu.active').removeClass('active');
         $('#newsMenu').addClass('active');
     });
+    // ------------- Nav Buttons -------------
 
+    // -------------- Menu --------------
     $('#sidebar #menu .resMenu li').click((event) => {
         $('#sidebar').toggleClass('hidden');
         $('#showSidebar').toggleClass('hidden');
     });
 
-    // --- Settings menu ---
+    // --- Settings Menu ---
     $('#accountBtn').click((event) => {
         if (!$('#account').hasClass('active')) {
             $('.container.active').removeClass('active');
@@ -90,13 +92,9 @@ $(document).ready(() => {
             $('#settingsContent .header .subtitle').text('Notificações');
         }
     });
-    // --- Settings menu ---
+    // --- Settings Menu ---
 
-    // --- E-mail ---
-    $('.resContent .resList li').click((event) => {
-        $('.resContent .resList li.selected').removeClass('selected');
-        $(event.target).addClass('selected');
-    });
+    // --- E-mail Menu ---
     $('#inboxBtn').click((event) => {
         $('#emailContent .header .subtitle').text('Entrada');
     });
@@ -107,12 +105,45 @@ $(document).ready(() => {
         $('#emailContent .header .subtitle').text('Rascunhos');
     });
     $('#spamBtn').click((event) => {
-        $('#email.content .header .subtitle').text('Spam');
+        $('#emailContent .header .subtitle').text('Spam');
     });
     $('#trashBtn').click((event) => {
-        $('#email.content .header .subtitle').text('Excluídos');
+        $('#emailContent .header .subtitle').text('Excluídos');
+    });
+    // --- E-mail Menu ---
+    // --- Chat Menu ---
+    $('#chatMenu #allContactsBtn').click((event) => {
+        $('#chatContent .header .subtitle').text('Todos os Contatos');
+    });
+    $('#chatMenu #onlineContactsBtn').click((event) => {
+        $('#chatContent .header .subtitle').text('Contatos On-line');
+    });
+    $('#chatMenu #groupsBtn').click((event) => {
+        $('#chatContent .header .subtitle').text('Grupos');
+    });
+    // --- Chat Menu ---
+    // -------------- Menu --------------
+
+    // --- E-mail ---
+    $('#emailInbox .resList li').click((event) => {
+        $('#emailInbox .resList li.selected').removeClass('selected');
+        $(event.target).closest('li').addClass('selected');
     });
     // --- E-mail ---
+
+    // --- Chat ---
+    $('#chatSendBtn').click((event) => {
+        let msg = $('#chatContacts .resViewer .messageInput input').val();
+        $('#chatContacts .resViewer .messageInput input').val('');
+        let newChatBubble = $('<div></div>').addClass('chat-bubble-right');
+        $(newChatBubble).text(msg);
+        $('#chatContacts .resViewer .chatBox').append(newChatBubble);
+    });
+    $('#chatContacts .resList li').click((event) => {
+        $('#chatContacts .resList li.selected').removeClass('selected');
+        $(event.target).closest('li').addClass('selected');
+    });
+    // --- Chat ---
 
     $('#accountForm').submit((event) => {
         event.preventDefault();

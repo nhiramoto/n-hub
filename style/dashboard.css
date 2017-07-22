@@ -186,6 +186,9 @@ body {
           padding: 10px;
           background-color: #EEE;
           box-shadow: 0 3px 8px #131313;
+          overflow: hidden;
+          white-space: nowrap;
+          user-select: none;
           transition: all .5s ease; }
           #content .container .resList ul li .avatar {
             position: absolute;
@@ -215,8 +218,7 @@ body {
       bottom: 0;
       right: 0;
       left: 30%;
-      background-color: transparent;
-      overflow: auto;
+      background-color: gray;
       font-size: 18px; }
       #content .container .resViewer .emailTitle {
         font-weight: bold;
@@ -226,6 +228,45 @@ body {
         font-weight: bold; }
       #content .container .resViewer .emailRecipientLabel {
         font-weight: bold; }
+      #content .container .resViewer .chatBox {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 40px);
+        padding: 30px;
+        background-color: gray;
+        overflow-y: auto; }
+      #content .container .resViewer .messageInput {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        left: 0;
+        bottom: 5px; }
+        #content .container .resViewer .messageInput input[type="text"] {
+          position: absolute;
+          box-sizing: border-box;
+          height: 100%;
+          width: 100%;
+          border: 0;
+          font-size: 20px;
+          line-height: 20px;
+          padding-left: 10px; }
+        #content .container .resViewer .messageInput i {
+          position: absolute;
+          right: 10px;
+          font-size: 30px;
+          color: gray;
+          height: 40px;
+          line-height: 40px;
+          transition: color .5s ease;
+          cursor: pointer; }
+          #content .container .resViewer .messageInput i:hover {
+            color: black;
+            transition: color .3s ease; }
+    #content .container #emailBody {
+      background-color: transparent; }
   #content #emailContent .container, #content #chatContent .container {
     padding-left: 52.5px;
     padding-top: 60px;
