@@ -6,7 +6,7 @@ var mainWindow = null;
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         backgroundColor: '#fff',
-        width: 1000,
+        width: 1200,
         height: 600,
         show: false
     });

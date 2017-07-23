@@ -144,7 +144,40 @@
             </div>
         </div>
         <div class="resContent active" id="emailContent">
-            <div class="header"><span class="title">E-mail</span> / <span class="subtitle">Entrada</span></div>
+            <div id="emailComposer">
+                <form action="" id="emailComposerForm">
+                    <table>
+                        <tr>
+                            <td>Para:</td>
+                            <td colspan="2"><input id="emailToField" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Cc:</td>
+                            <td colspan="2"><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Assunto:</td>
+                            <td colspan="2"><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input id="cancelBtn" type="button" value="Cancelar"></td>
+                            <td><input type="reset" value="Limpar" align="right"></td>
+                            <td><input type="submit" value="Enviar" align="right"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="header">
+                <span class="title">E-mail</span> / <span class="subtitle">Entrada</span>
+                <i id="emailComposeNewBtn" class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <i id="emailReplyBtn" class="fa fa-reply" aria-hidden="true"></i>
+                <i id="emailReplyAllBtn" class="fa fa-reply-all" aria-hidden="true"></i>
+            </div>
             <div class="container active" id="emailInbox">
                 <div class="resList">
                     <ul>
@@ -232,10 +265,21 @@
             </div>
         </div>
         <div class="resContent" id="calendarContent">
-            <div id="calendarViewer">
-                <div class="calendarHeader"></div>
-                <div class="calendarWeekday"></div>
-                <div class="days"></div>
+            <div class="header"><span class="title">Calendário</span> / <span class="subtitle">Mês</span></div>
+            <div class="container" id="calendarMonthView">
+                <div id="calendarViewer">
+                    <div class="calendarHeader">Calendar Header</div>
+                    <div class="calendarWeekday">Calendar Weekdays</div>
+                    <div class="days">Days</div>
+                </div>
+                <div id="taskList">
+                    <ul>
+                        <li>To do...</li>
+                        <li>To do...</li>
+                        <li>To do...</li>
+                        <li>To do...</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

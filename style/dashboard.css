@@ -148,6 +148,43 @@ body {
       margin-left: 70px; }
     #content .header .subtitle {
       font-weight: 400; }
+    #content .header #emailComposeNewBtn, #content .header #emailReplyBtn, #content .header #emailReplyAllBtn {
+      position: absolute;
+      cursor: pointer;
+      margin-right: 20px;
+      line-height: 60px;
+      color: white;
+      transition: color .5s ease; }
+    #content .header #emailComposeNewBtn {
+      right: 120px; }
+    #content .header #emailReplyBtn {
+      right: 60px; }
+    #content .header #emailReplyAllBtn {
+      right: 0; }
+    #content .header #emailComposeNewBtn:hover, #content .header #emailReplyBtn:hover, #content .header #emailReplyAllBtn:hover {
+      color: #F5F688;
+      transition: color .1s ease; }
+  #content #emailComposer {
+    position: fixed;
+    width: 500px;
+    top: 100px;
+    left: 50%;
+    margin-left: -250px;
+    padding: 20px;
+    z-index: 10;
+    background-color: white;
+    border-radius: 5px;
+    opacity: .98;
+    box-shadow: 0 5px 13px gray;
+    transform: translateY(-800px);
+    transition: transform .5s ease; }
+    #content #emailComposer.visible {
+      transform: translateY(0);
+      transition: transform .5s ease; }
+    #content #emailComposer table {
+      width: 100%; }
+      #content #emailComposer table input[type="text"], #content #emailComposer table textarea {
+        width: 100%; }
   #content .container {
     display: none;
     visibility: hidden;
@@ -253,7 +290,8 @@ body {
           border: 0;
           font-size: 20px;
           line-height: 20px;
-          padding-left: 10px; }
+          padding-left: 10px;
+          box-shadow: inset 0 0 8px #131313; }
         #content .container .resViewer .messageInput img#chatSendBtn {
           position: absolute;
           right: 10px;

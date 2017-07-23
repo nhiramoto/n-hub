@@ -55,8 +55,17 @@ $(document).ready(() => {
         }
     });
     $('#calendarBtn').click((event) => {
-        $('.resMenu.active').removeClass('active');
-        $('#calendarMenu').addClass('active');
+        if (!$('#calendarContent').hasClass('active')) {
+            $('.resMenu.active').removeClass('active');
+            $('#calendarMenu').addClass('active');
+
+            $('.resContent.active').removeClass('active');
+            $('#calendarContent').addClass('active');
+
+            $('.container.active').removeClass('active');
+            $('.container#calendarMonthView').addClass('active');
+            $('#calendarContent .header .subtitle').text('Mẽs');
+        }
     });
     $('#newsBtn').click((event) => {
         $('.resMenu.active').removeClass('active');
@@ -128,6 +137,29 @@ $(document).ready(() => {
     $('#emailInbox .resList li').click((event) => {
         $('#emailInbox .resList li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
+    });
+    $('#emailComposeNewBtn').click((event) => {
+        $('#emailComposerForm #emailToField').val('');
+        $('#emailComposer').addClass('visible');
+    });
+    $('#emailReplyBtn').click((event) => {
+        $('#emailComposerForm #emailToField').val('Contato 1');
+        $('#emailComposer').addClass('visible');
+    });
+    $('#emailReplyAllBtn').click((event) => {
+        $('#emailComposerForm #emailToField').val('Contato 1, Contato 2, Contato 3');
+        $('#emailComposer').addClass('visible');
+    });
+    $('#emailComposerForm').submit((event) => {
+        event.preventDefault();
+        let to = $('#emailComposerForm #emailToField').val();
+        $('#emailComposerForm').trigger('reset');
+        globals.showMessage('E-mail', 'E-mail enviado para ' + to + ' com sucesso.');
+        $('#emailComposer').removeClass('visible');
+    });
+    $('#emailComposerForm #cancelBtn').click((event) => {
+    $('#emailComposerForm').trigger('reset');
+        $('#emailComposer').removeClass('visible');
     });
     // --- E-mail ---
 
