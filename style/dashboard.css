@@ -2,7 +2,7 @@ body {
   display: none;
   margin: 0;
   padding: 0;
-  font-family: Vollkorn, Aller, Helvetica, Arial; }
+  overflow: hidden; }
 
 #sidebar {
   position: absolute;
@@ -69,7 +69,8 @@ body {
     width: 15%;
     background-color: #6a6a6a;
     box-shadow: inset 1px 0 3px #131313;
-    opacity: .8; }
+    opacity: .8;
+    overflow-y: auto; }
     #sidebar #nav ul {
       padding: 0; }
     #sidebar #nav ul li {
@@ -306,8 +307,81 @@ body {
             -webkit-filter: invert(50%);
             transition: -webkit-filter .3s ease; }
     #content .container #emailBody {
-      background-color: transparent; }
-  #content #emailContent .container, #content #chatContent .container {
+      background-color: transparent;
+      overflow-y: auto; }
+    #content .container #calendarViewer {
+      display: inline-block;
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      margin: 0;
+      width: 70%;
+      box-sizing: border-box; }
+      #content .container #calendarViewer .calendarHeader {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        background-color: #372f2e;
+        color: white;
+        box-shadow: 0 3px 8px gray;
+        line-height: 50px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        vertical-align: middle; }
+      #content .container #calendarViewer .calendarBody {
+        position: absolute;
+        box-sizing: border-box;
+        top: 50px;
+        bottom: 0;
+        width: 100%;
+        background-color: #DFDFDF; }
+        #content .container #calendarViewer .calendarBody .days {
+          width: 100%;
+          height: 100%;
+          border-collapse: collapse; }
+          #content .container #calendarViewer .calendarBody .days td {
+            width: 14.28%;
+            text-align: center;
+            border: 1px solid #888;
+            cursor: pointer; }
+          #content .container #calendarViewer .calendarBody .days td:hover {
+            box-shadow: inset 0 0 18px #006600;
+            text-shadow: 1px 1px 2px green; }
+          #content .container #calendarViewer .calendarBody .days tr:nth-child(1) td {
+            border: 0;
+            height: 40px;
+            font-size: 14px; }
+    #content .container #tasks {
+      display: inline-block;
+      position: absolute;
+      top: 60px;
+      bottom: 0;
+      left: 70%;
+      right: 0;
+      margin-left: 52.5px;
+      padding: 20px;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      box-shadow: inset 0 3px 8px #131313; }
+      #content .container #tasks input#newTaskInput {
+        display: inline-block;
+        width: 70%;
+        height: 20px; }
+      #content .container #tasks button#newTaskBtn {
+        display: inline-block;
+        width: 20%;
+        margin-left: 10px; }
+      #content .container #tasks ul#taskList {
+        list-style: none;
+        padding-left: 5px; }
+        #content .container #tasks ul#taskList li {
+          line-height: 40px;
+          height: 40px; }
+        #content .container #tasks ul#taskList li input {
+          margin-right: 10px; }
+  #content #emailContent .container, #content #chatContent .container, #content #calendarContent .container {
     padding-left: 52.5px;
     padding-top: 60px;
     padding-right: 0;

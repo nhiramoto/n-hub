@@ -1,18 +1,21 @@
 * {
     // Scrollbars
     &::-webkit-scrollbar-track {
-    	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    	-webkit-box-shadow: inset 1px 0 6px rgba(0,0,0,0.3);
     	border-radius: 10px;
-    	background-color: #F5F5F5;
+    	background-color: transparent;
     }
     &::-webkit-scrollbar {
     	width: 10px;
-    	background-color: #F5F5F5;
+    	background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
     	border-radius: 10px;
     	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.8);
-    	background-color: #888;
+    	background-color: #EFEFEF;
+        &:hover {
+            background-color: #6B6CB8;
+        }
     }
 }
 
@@ -30,81 +33,86 @@ table {
     }
 }
 
-form {
-    input, textarea {
-        border-width: 0;
-        border-radius: 5px;
-        padding: 7px;
-        font-family: Helvetica, Arial;
-    }
-    input[required]::after {
-        content: "*";
-        right: 0;
-        color: red;
-        display: inline-block;
-    }
-    input[type="checkbox"] {
-        -webkit-appearance: none;
-        // border: 2px solid blue;
-        box-shadow: inset 0 0 8px gray;
-        border-radius: 3px;
-        position: relative;
-        display: inline-block;
-        padding: 9px;
-        vertical-align: middle;
-        &:checked:after {
-            content: '\2714';
-            font-size: 18px;
-            position: absolute;
-            top: -1px;
-            left: 3px;
-            color: blue;
-        }
-    }
-
-    input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
-        box-shadow: inset 0 0 8px gray;
-    }
-    input[type="reset"], input[type="submit"], input[type="button"] {
-        cursor: pointer;
-        font-weight: bold;
-        background: transparent;
-        border-width: 2px;
-        border-style: solid;
-        width: auto;
-        box-shadow: 0 0 8px gray;
-    }
-    input[type="reset"] {
-        color: red;
-        border-color: red;
-        transition: all .3s ease;
-    }
-    input[type="reset"]:hover {
-        color: white;
-        background-color: red;
-        transition: all .1s ease;
-    }
-    input[type="submit"] {
-        color: green;
-        border-color: green;
-        transition: all .3s ease;
-    }
-    input[type="submit"]:hover {
-        color: white;
-        background-color: green;
-        transition: all .1s ease;
-    }
-    input[type="button"] {
-        color: #6B6CB8;
-        border-color: #6B6CB8;
-        transition: all .3s ease;
-    }
-    input[type="button"]:hover {
-        color: white;
-        background-color: #6B6CB8;
-        transition: all .1s ease;
+input, textarea {
+    border-width: 0;
+    border-radius: 5px;
+    padding: 7px;
+    font-family: Helvetica, Arial;
+}
+input:focus {
+    outline: 0;
+}
+input[required]::after {
+    content: "*";
+    right: 0;
+    color: red;
+    display: inline-block;
+}
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    // border: 2px solid blue;
+    box-shadow: inset 0 0 8px gray;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 9px;
+    vertical-align: middle;
+    &:checked:after {
+        content: '\2714';
+        font-size: 18px;
+        position: absolute;
+        top: -1px;
+        left: 3px;
+        color: blue;
     }
 }
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+    box-shadow: inset 0 0 8px gray;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus, textarea:focus {
+    box-shadow: inset 1px 1px 15px #6B6CB8;
+}
+input[type="reset"], input[type="submit"], input[type="button"] {
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+    border-width: 2px;
+    border-style: solid;
+    width: auto;
+    box-shadow: 0 0 8px gray;
+}
+input[type="reset"] {
+    color: red;
+    border-color: red;
+    transition: all .3s ease;
+}
+input[type="reset"]:hover {
+    color: white;
+    background-color: red;
+    transition: all .1s ease;
+}
+input[type="submit"] {
+    color: green;
+    border-color: green;
+    transition: all .3s ease;
+}
+input[type="submit"]:hover {
+    color: white;
+    background-color: green;
+    transition: all .1s ease;
+}
+input[type="button"] {
+    color: #6B6CB8;
+    border-color: #6B6CB8;
+    transition: all .3s ease;
+}
+input[type="button"]:hover {
+    color: white;
+    background-color: #6B6CB8;
+    transition: all .1s ease;
+}
+
 button {
     border-width: 0;
     border-radius: 3px;

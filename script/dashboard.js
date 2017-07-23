@@ -183,6 +183,17 @@ $(document).ready(() => {
     });
     // --- Chat ---
 
+    // --- Calendar ---
+    $('#newTaskBtn').click((event) => {
+        let taskStr = $('#newTaskInput').val();
+        if (taskStr.length > 0) {
+            $('#newTaskInput').val('');
+            let task = $('<li><input type="checkbox">' + taskStr + '</li>')
+            $('#taskList').append(task);
+        }
+    });
+    // --- Calendar ---
+
     $('#accountForm').submit((event) => {
         event.preventDefault();
         if ($('#newPassword').val().length === 0) {
