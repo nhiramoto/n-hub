@@ -5,7 +5,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="../style/mainStyle.css">
     <link rel="stylesheet" href="../style/dashboard.css">
-    <link rel="stylesheet" href="../style/font-awesome.min.css">
+    <link rel="stylesheet" href="../res/font-awesome/font-awesome.min.css">
     <script>
         require('../script/dashboard.js');
     </script>
@@ -226,9 +226,16 @@
                     </div>
                     <div class="messageInput">
                         <input id="chatMessageInput" type="text" placeholder="Escreva a mensagem aqui...">
-                        <i id="chatSendBtn" class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+                        <img id="chatSendBtn" src="../res/image/sendIcon-32.png" alt="sendIcon">
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="resContent" id="calendarContent">
+            <div id="calendarViewer">
+                <div class="calendarHeader"></div>
+                <div class="calendarWeekday"></div>
+                <div class="days"></div>
             </div>
         </div>
     </div>

@@ -4,7 +4,12 @@ const {app, BrowserWindow} = electron;
 var mainWindow = null;
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({backgroundColor: '#fff', width: 800, height: 600, show: false});
+    mainWindow = new BrowserWindow({
+        backgroundColor: '#fff',
+        width: 1000,
+        height: 600,
+        show: false
+    });
     // mainWindow.loadURL(`file://${__dirname}/html/welcome.html`);
     // Testando dashboard.html
     mainWindow.loadURL(`file://${__dirname}/html/dashboard.html`);

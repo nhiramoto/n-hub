@@ -132,16 +132,22 @@ $(document).ready(() => {
     // --- E-mail ---
 
     // --- Chat ---
-    $('#chatSendBtn').click((event) => {
-        let msg = $('#chatContacts .resViewer .messageInput input').val();
-        $('#chatContacts .resViewer .messageInput input').val('');
-        let newChatBubble = $('<div></div>').addClass('chat-bubble-right');
-        $(newChatBubble).text(msg);
-        $('#chatContacts .resViewer .chatBox').append(newChatBubble);
-    });
     $('#chatContacts .resList li').click((event) => {
         $('#chatContacts .resList li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
+    });
+    $('#chatSendBtn').click((event) => {
+        let msg = $('#chatContacts .resViewer .messageInput input').val();
+        if (msg.length > 0) {
+            $('#chatContacts .resViewer .messageInput input').val('');
+            let newChatBubble = $('<div></div>').addClass('chat-bubble-right');
+            $(newChatBubble).text(msg);
+            $(newChatBubble).css('right', '-100%');
+            $('#chatContacts .resViewer .chatBox').append(newChatBubble);
+            $(newChatBubble).animate({
+                'right': '0%'
+            }, 500);
+        }
     });
     // --- Chat ---
 

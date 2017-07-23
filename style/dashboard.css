@@ -237,7 +237,8 @@ body {
         height: calc(100% - 40px);
         padding: 30px;
         background-color: gray;
-        overflow-y: auto; }
+        overflow-y: auto;
+        overflow-x: hidden; }
       #content .container .resViewer .messageInput {
         position: absolute;
         width: 100%;
@@ -253,18 +254,19 @@ body {
           font-size: 20px;
           line-height: 20px;
           padding-left: 10px; }
-        #content .container .resViewer .messageInput i {
+        #content .container .resViewer .messageInput img#chatSendBtn {
           position: absolute;
           right: 10px;
           font-size: 30px;
-          color: gray;
-          height: 40px;
+          height: 32px;
           line-height: 40px;
-          transition: color .5s ease;
+          margin-top: 4px;
+          -webkit-filter: invert(0);
+          transition: -webkit-filter .5s ease;
           cursor: pointer; }
-          #content .container .resViewer .messageInput i:hover {
-            color: black;
-            transition: color .3s ease; }
+          #content .container .resViewer .messageInput img#chatSendBtn:hover {
+            -webkit-filter: invert(50%);
+            transition: -webkit-filter .3s ease; }
     #content .container #emailBody {
       background-color: transparent; }
   #content #emailContent .container, #content #chatContent .container {
