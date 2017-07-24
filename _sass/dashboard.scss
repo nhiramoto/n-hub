@@ -78,16 +78,16 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             background-color: $sidebarItemColor;
             border-radius: 5px 0 0 5px;
             box-shadow: 0 0 5px #131313;
-            transition: background-color .5s ease;
+            transition: background-color .3s ease;
             cursor: pointer;
         }
         ul li:hover {
             background-color: $hoverColor;
-            transition: background-color .3s ease;
+            transition: background-color .2s ease;
         }
         ul li.active {
             background-color: $activeColor;
-            transition: background-color .3s ease;
+            transition: background-color .1s ease;
         }
     }
 
@@ -104,7 +104,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         ul {
             padding: 0;
         }
-        ul li {
+        ul .navBtn {
             list-style: none;
             display: block;
             margin-top: 50px;
@@ -117,12 +117,12 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             vertical-align: middle;
             transition: all .5s ease;
         }
-        ul li.active {
+        ul .navBtn.active {
             background-color: $sidebarColor;
             box-shadow: 2px 1px 3px #131313;
             transition: all .3s ease;
         }
-        ul li:hover {
+        ul .navBtn:hover {
             cursor: pointer;
             text-shadow: 0 0 20px $hoverColor;
             transition: text-shadow .3s ease;
@@ -262,6 +262,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         padding-right: 20px;
         padding-bottom: 20px;
         z-index: -1;
+        font-family: Roboto, Helvetica, Arial;
         #resourcesForm input {
             margin: 10px;
         }
@@ -288,6 +289,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                 li {
                     margin: 10px;
                     padding: 10px;
+                    height: 70px;
                     background-color: $resListItemColor;
                     box-shadow: 0 3px 8px #131313;
                     overflow: hidden;
@@ -297,12 +299,32 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                     .avatar {
                         position: absolute;
                         font-size: 32px;
-                        left: 30px;
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 5px;
+                        margin-top: 25px;
+                        text-align: center;
+                    }
+                    .itemAuthor {
+                        position: absolute;
+                        left: 20px;
+                        font-size: 14px;
+                        color: #222;
+                        background-color: inherit;
+                        z-index: 1;
+                    }
+                    .itemDate {
+                        position: absolute;
+                        right: 20px;
+                        font-size: 14px;
+                        color: #222;
                     }
                     .itemTitle {
+                        margin-top: 10px;
                         margin-left: 50px;
                         font-weight: bold;
                         font-size: 16px;
+                        line-height: 24px;
                     }
                     .itemContent {
                         margin-left: 50px;
@@ -332,17 +354,6 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             left: 30%;
             background-color: gray;
             font-size: 18px;
-            .emailTitle {
-                font-weight: bold;
-                font-size: 24px;
-                line-height: 50px;
-            }
-            .emailSenderLabel {
-                font-weight: bold;
-            }
-            .emailRecipientLabel {
-                font-weight: bold;
-            }
             .chatBox {
                 position: absolute;
                 box-sizing: border-box;
@@ -392,6 +403,20 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         #emailBody {
             background-color: transparent;
             overflow-y: auto;
+            .emailTitle {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 50px;
+            }
+            .emailSenderLabel {
+                font-weight: bold;
+            }
+            .emailRecipientLabel {
+                font-weight: bold;
+            }
+            .emailDatetime {
+                font-size: 16px;
+            }
         }
         #calendarViewer {
             display: inline-block;
@@ -479,8 +504,33 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                 }
             }
         }
+        #newsBody {
+            background-color: transparent;
+            overflow-y: auto;
+            .centered {
+                width: 100%;
+                text-align: center;
+            }
+            .newsTitle {
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 50px;
+            }
+            .newsAuthor {
+                font-size: 20px;
+                color: #222;
+            }
+            .newsDate {
+                font-size: 16px;
+                color: #222;
+                margin-bottom: 30px;
+            }
+        }
     }
-    #emailContent .container, #chatContent .container, #calendarContent .container {
+    #emailContent .container,
+    #chatContent .container,
+    #calendarContent .container,
+    #newsContent .container {
         padding-left: $navWidth;
         padding-top: 60px;
         padding-right: 0;

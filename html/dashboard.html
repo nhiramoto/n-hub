@@ -20,7 +20,7 @@
             <div class="resMenu" id="settingsMenu">
                 <span class="header">Configurações</span>
                 <ul>
-                    <li id="accountBtn">Conta e Sincronização</li>
+                    <li class="active " id="accountBtn">Conta e Sincronização</li>
                     <li id="resourcesBtn">Recursos</li>
                     <li id="notificationsBtn">Notificações</li>
                 </ul>
@@ -28,7 +28,7 @@
             <div class="resMenu active" id="emailMenu">
                 <span class="header">E-mail</span>
                 <ul>
-                    <li id="inboxBtn">Entrada</li>
+                    <li class="active" id="inboxBtn">Entrada</li>
                     <li id="sentBtn">Enviados</li>
                     <li id="draftsBtn">Rascunhos</li>
                     <li id="spamBtn">Spam</li>
@@ -38,7 +38,7 @@
             <div class="resMenu" id="chatMenu">
                 <span class="header">Chat</span>
                 <ul>
-                    <li id="allContactsBtn">Todos Contatos</li>
+                    <li class="active" id="allContactsBtn">Todos Contatos</li>
                     <li id="onlineContactsBtn">On-line</li>
                     <li id="groupsBtn">Grupos</li>
                 </ul>
@@ -46,27 +46,26 @@
             <div class="resMenu" id="calendarMenu">
                 <span class="header">Calendário</span>
                 <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
+                    <li class="active" id="monthViewBtn">Visualizar por Mês</li>
                 </ul>
             </div>
             <div class="resMenu" id="newsMenu">
                 <span class="header">Notícias</span>
                 <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
+                    <li class="active" id="allArticlesBtn">Todos artigos</li>
+                    <li class="feed">Fonte 1</li>
+                    <li class="feed">Fonte 2</li>
+                    <li class="feed">Fonte 3</li>
                 </ul>
             </div>
         </div>
         <div id="nav">
             <ul>
-                <li id="settingsBtn"><i class="fa fa-cog" aria-hidden="true"></i></li>
-                <li class="active" id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
-                <li id="chatBtn"><i class="fa fa-comments" aria-hidden="true"></i></li>
-                <li id="calendarBtn"><i class="fa fa-calendar" aria-hidden="true"></i></li>
-                <li id="newsBtn"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
+                <li class="navBtn" id="settingsBtn"><i class="fa fa-cog" aria-hidden="true"></i></li>
+                <li class="active navBtn" id="emailBtn"><i class="fa fa-envelope" aria-hidden="true"></i></li>
+                <li class="navBtn" id="chatBtn"><i class="fa fa-comments" aria-hidden="true"></i></li>
+                <li class="navBtn" id="calendarBtn"><i class="fa fa-calendar" aria-hidden="true"></i></li>
+                <li class="navBtn" id="newsBtn"><i class="fa fa-newspaper-o" aria-hidden="true"></i></li>
             </ul>
         </div>
         <div id="showSidebar" class="hidden">
@@ -183,35 +182,46 @@
                     <ul>
                         <li class="selected">
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="itemAuthor">Remetente 1</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
                             <span class="itemTitle">Email 1</span><br>
-                            <span class="itemContent">Sender 1</span>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="itemAuthor">Remetent 2</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
                             <span class="itemTitle">Email 2</span><br>
-                            <span class="itemContent">Sender 2</span>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="itemAuthor">Remetente 2</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
                             <span class="itemTitle">Email 3</span><br>
-                            <span class="itemContent">Sender 3</span>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="itemAuthor">Remetente 3</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
                             <span class="itemTitle">Email 4</span><br>
-                            <span class="itemContent">Sender 4</span>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <span class="itemAuthor">Remetente 4</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
                             <span class="itemTitle">Email 5</span><br>
-                            <span class="itemContent">Sender 5</span>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
                         </li>
                     </ul>
                 </div>
                 <div class="resViewer" id="emailBody">
                     <span class="emailTitle">Título do e-mail</span><br>
-                    <span class="emailSenderLabel">De:</span> Remetente&lt;remetente@email.com&gt;<br>
-                    <span class="emailRecipientLabel">Para:</span> Destinatário&lt;destinatario@email.com&gt;<br>
+                    <span class="emailSenderLabel">De:</span> Remetente &lt;remetente@email.com&gt;<br>
+                    <span class="emailRecipientLabel">Para:</span> Destinatário &lt;destinatario@email.com&gt;<br>
+                    <span class="emailDatetime">10 Jan. 2017, 10:00 AM</span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque aliquam, non magnam assumenda odio debitis quod fuga aliquid voluptates praesentium, tempora laborum fugiat blanditiis veritatis maiores cupiditate nisi quasi dolores.</p>
                 </div>
             </div>
@@ -223,27 +233,32 @@
                     <ul>
                         <li class="selected">
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <span class="itemTitle">Contato 1</span><br>
+                            <span class="itemAuthor">Contato 1</span>
+                            <span class="itemDate">On-line: 10hrs atrás</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <span class="itemTitle">Contato 2</span><br>
+                            <span class="itemAuthor">Contato 2</span>
+                            <span class="itemDate">On-line: 10hrs atrás</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <span class="itemTitle">Contato 3</span><br>
+                            <span class="itemAuthor">Contato 3</span>
+                            <span class="itemDate">On-line: 10hrs atrás</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <span class="itemTitle">Contato 4</span><br>
+                            <span class="itemAuthor">Contato 4</span>
+                            <span class="itemDate">On-line: 10hrs atrás</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
                         </li>
                         <li>
                             <span class="avatar"><i class="fa fa-user" aria-hidden="true"></i></span>
-                            <span class="itemTitle">Contato 5</span><br>
+                            <span class="itemAuthor">Contato 5</span>
+                            <span class="itemDate">On-line: 10hrs atrás</span><br>
                             <span class="itemContent">Lorem ipsum dolor ...</span>
                         </li>
                     </ul>
@@ -266,9 +281,11 @@
         </div>
         <div class="resContent" id="calendarContent">
             <div class="header"><span class="title">Calendário</span> / <span class="subtitle">Mês</span></div>
-            <div class="container" id="calendarMonthView">
+            <div class="container active" id="calendarMonthView">
                 <div id="calendarViewer">
-                    <div class="calendarHeader">Calendar Header</div>
+                    <div class="calendarHeader">
+                        Mês
+                    </div>
                     <div class="calendarBody">
                         <table class="days">
                             <tr>
@@ -336,6 +353,54 @@
                         <li><input type="checkbox">Tarefa #3</li>
                         <li><input type="checkbox">Tarefa #4</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <div class="resContent" id="newsContent">
+            <div class="header"><span class="title">Notícias</span> / <span class="subtitle">Todos artigos</span></div>
+            <div class="container" id="newsAllArticlesView">
+                <div class="resList">
+                    <ul>
+                        <li>
+                            <span class="avatar"></span>
+                            <span class="itemAuthor">Author 1</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
+                            <span class="itemTitle">Notícia 1</span><br>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
+                        </li>
+                        <li>
+                            <span class="itemAuthor">Author 2</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
+                            <span class="itemTitle">Notícia 2</span><br>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
+                        </li>
+                        <li>
+                            <span class="itemAuthor">Author 3</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
+                            <span class="itemTitle">Notícia 3</span><br>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
+                        </li>
+                        <li>
+                            <span class="itemAuthor">Author 4</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
+                            <span class="itemTitle">Notícia 4</span><br>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
+                        </li>
+                        <li>
+                            <span class="itemAuthor">Author 5</span>
+                            <span class="itemDate">10 de jan. 2017</span><br>
+                            <span class="itemTitle">Notícia 5</span><br>
+                            <span class="itemContent">Lorem ipsum dolor...</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resViewer" id="newsBody">
+                    <div class="centered">
+                        <span class="newsTitle">Título da Notícia</span><br>
+                        <span class="newsAuthor">Autor &lt;autor@email.com&gt;</span><br>
+                        <span class="newsDate">10 de jan. 2017, 10:00 AM</span><br>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolor necessitatibus quo, eveniet consequatur. Modi pariatur, quas facilis commodi tempore ullam ipsam veritatis, aut recusandae incidunt nemo rerum ducimus assumenda.</p>
                 </div>
             </div>
         </div>

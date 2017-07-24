@@ -53,14 +53,14 @@ body {
       background-color: #EFEFEF;
       border-radius: 5px 0 0 5px;
       box-shadow: 0 0 5px #131313;
-      transition: background-color .5s ease;
+      transition: background-color .3s ease;
       cursor: pointer; }
     #sidebar #menu ul li:hover {
       background-color: #F5F688;
-      transition: background-color .3s ease; }
+      transition: background-color .2s ease; }
     #sidebar #menu ul li.active {
       background-color: #0079FF;
-      transition: background-color .3s ease; }
+      transition: background-color .1s ease; }
   #sidebar #nav {
     position: absolute;
     box-sizing: border-box;
@@ -73,7 +73,7 @@ body {
     overflow-y: auto; }
     #sidebar #nav ul {
       padding: 0; }
-    #sidebar #nav ul li {
+    #sidebar #nav ul .navBtn {
       list-style: none;
       display: block;
       margin-top: 50px;
@@ -85,11 +85,11 @@ body {
       user-select: none;
       vertical-align: middle;
       transition: all .5s ease; }
-    #sidebar #nav ul li.active {
+    #sidebar #nav ul .navBtn.active {
       background-color: #AFAFAF;
       box-shadow: 2px 1px 3px #131313;
       transition: all .3s ease; }
-    #sidebar #nav ul li:hover {
+    #sidebar #nav ul .navBtn:hover {
       cursor: pointer;
       text-shadow: 0 0 20px #F5F688;
       transition: text-shadow .3s ease; }
@@ -198,7 +198,8 @@ body {
     padding-top: 80px;
     padding-right: 20px;
     padding-bottom: 20px;
-    z-index: -1; }
+    z-index: -1;
+    font-family: Roboto, Helvetica, Arial; }
     #content .container #resourcesForm input {
       margin: 10px; }
     #content .container #notificationsForm input {
@@ -222,6 +223,7 @@ body {
         #content .container .resList ul li {
           margin: 10px;
           padding: 10px;
+          height: 70px;
           background-color: #EEE;
           box-shadow: 0 3px 8px #131313;
           overflow: hidden;
@@ -231,11 +233,29 @@ body {
           #content .container .resList ul li .avatar {
             position: absolute;
             font-size: 32px;
-            left: 30px; }
+            width: 32px;
+            height: 32px;
+            margin-left: 5px;
+            margin-top: 25px;
+            text-align: center; }
+          #content .container .resList ul li .itemAuthor {
+            position: absolute;
+            left: 20px;
+            font-size: 14px;
+            color: #222;
+            background-color: inherit;
+            z-index: 1; }
+          #content .container .resList ul li .itemDate {
+            position: absolute;
+            right: 20px;
+            font-size: 14px;
+            color: #222; }
           #content .container .resList ul li .itemTitle {
+            margin-top: 10px;
             margin-left: 50px;
             font-weight: bold;
-            font-size: 16px; }
+            font-size: 16px;
+            line-height: 24px; }
           #content .container .resList ul li .itemContent {
             margin-left: 50px;
             font-size: 14px; }
@@ -258,14 +278,6 @@ body {
       left: 30%;
       background-color: gray;
       font-size: 18px; }
-      #content .container .resViewer .emailTitle {
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 50px; }
-      #content .container .resViewer .emailSenderLabel {
-        font-weight: bold; }
-      #content .container .resViewer .emailRecipientLabel {
-        font-weight: bold; }
       #content .container .resViewer .chatBox {
         position: absolute;
         box-sizing: border-box;
@@ -309,6 +321,16 @@ body {
     #content .container #emailBody {
       background-color: transparent;
       overflow-y: auto; }
+      #content .container #emailBody .emailTitle {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 50px; }
+      #content .container #emailBody .emailSenderLabel {
+        font-weight: bold; }
+      #content .container #emailBody .emailRecipientLabel {
+        font-weight: bold; }
+      #content .container #emailBody .emailDatetime {
+        font-size: 16px; }
     #content .container #calendarViewer {
       display: inline-block;
       position: absolute;
@@ -381,7 +403,27 @@ body {
           height: 40px; }
         #content .container #tasks ul#taskList li input {
           margin-right: 10px; }
-  #content #emailContent .container, #content #chatContent .container, #content #calendarContent .container {
+    #content .container #newsBody {
+      background-color: transparent;
+      overflow-y: auto; }
+      #content .container #newsBody .centered {
+        width: 100%;
+        text-align: center; }
+      #content .container #newsBody .newsTitle {
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 50px; }
+      #content .container #newsBody .newsAuthor {
+        font-size: 20px;
+        color: #222; }
+      #content .container #newsBody .newsDate {
+        font-size: 16px;
+        color: #222;
+        margin-bottom: 30px; }
+  #content #emailContent .container,
+  #content #chatContent .container,
+  #content #calendarContent .container,
+  #content #newsContent .container {
     padding-left: 52.5px;
     padding-top: 60px;
     padding-right: 0;

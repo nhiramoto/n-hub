@@ -20,11 +20,14 @@ $(document).ready(() => {
             $('.resMenu.active').removeClass('active');
             $('#settingsMenu').addClass('active');
 
+            $('#settingsMenu ul li.active').removeClass('active');
+            $('#settingsMenu #accountBtn').addClass('active');
+
             $('.resContent.active').removeClass('active');
             $('#settingsContent').addClass('active');
 
-            $('.container.active').removeClass('active');
-            $('.container#account').addClass('active');
+            $('#settingsContent .container.active').removeClass('active');
+            $('#settingsContent .container#account').addClass('active');
             $('#settingsContent .header .subtitle').text('Conta e Sincronização');
         }
     });
@@ -33,11 +36,14 @@ $(document).ready(() => {
             $('.resMenu.active').removeClass('active');
             $('#emailMenu').addClass('active');
 
+            $('#emailMenu ul li.active').removeClass('active');
+            $('#emailMenu #inboxBtn').addClass('active');
+
             $('.resContent.active').removeClass('active');
             $('#emailContent').addClass('active');
 
-            $('.container.active').removeClass('active');
-            $('.container#emailInbox').addClass('active');
+            $('#emailContent .container.active').removeClass('active');
+            $('#emailContent .container#emailInbox').addClass('active');
             $('#emailContent .header .subtitle').text('Entrada');
         }
     });
@@ -46,11 +52,14 @@ $(document).ready(() => {
             $('.resMenu.active').removeClass('active');
             $('#chatMenu').addClass('active');
 
+            $('#chatMenu ul li.active').removeClass('active');
+            $('#allContactsBtn').addClass('active');
+
             $('.resContent.active').removeClass('active');
             $('#chatContent').addClass('active');
 
-            $('.container.active').removeClass('active');
-            $('.container#chatContacts').addClass('active');
+            $('#chatContent .container.active').removeClass('active');
+            $('#chatContent .container#chatContacts').addClass('active');
             $('#chatContent .header .subtitle').text('Contatos');
         }
     });
@@ -59,17 +68,32 @@ $(document).ready(() => {
             $('.resMenu.active').removeClass('active');
             $('#calendarMenu').addClass('active');
 
+            $('#calendarMenu ul li.active').removeClass('active');
+            $('#monthViewBtn').addClass('active');
+
             $('.resContent.active').removeClass('active');
             $('#calendarContent').addClass('active');
 
-            $('.container.active').removeClass('active');
-            $('.container#calendarMonthView').addClass('active');
-            $('#calendarContent .header .subtitle').text('Mẽs');
+            $('#calendarContent .container.active').removeClass('active');
+            $('#calendarContent .container#calendarMonthView').addClass('active');
+            $('#calendarContent .header .subtitle').text('Mês');
         }
     });
     $('#newsBtn').click((event) => {
-        $('.resMenu.active').removeClass('active');
-        $('#newsMenu').addClass('active');
+        if (!$('#newsContent').hasClass('active')) {
+            $('.resMenu.active').removeClass('active');
+            $('#newsMenu').addClass('active');
+
+            $('#newsMenu ul li.active').removeClass('active');
+            $('#allArticlesBtn').addClass('active');
+
+            $('.resContent.active').removeClass('active');
+            $('#newsContent').addClass('active');
+
+            $('#newsContent .container.active').removeClass('active');
+            $('#newsContent .container#newsAllArticlesView').addClass('active');
+            $('#newsContent .header .subtitle').text('Todos artigos');
+        }
     });
     // ------------- Nav Buttons -------------
 
@@ -80,6 +104,10 @@ $(document).ready(() => {
     });
 
     // --- Settings Menu ---
+    $('#settingsMenu ul li').click((event) => {
+        $('#settingsMenu ul li.active').removeClass('active');
+        $(event.target).closest('li').addClass('active');
+    });
     $('#accountBtn').click((event) => {
         if (!$('#account').hasClass('active')) {
             $('.container.active').removeClass('active');
@@ -104,6 +132,10 @@ $(document).ready(() => {
     // --- Settings Menu ---
 
     // --- E-mail Menu ---
+    $('#emailMenu ul li').click((event) => {
+        $('#emailMenu ul li.active').removeClass('active');
+        $(event.target).closest('li').addClass('active');
+    });
     $('#inboxBtn').click((event) => {
         $('#emailContent .header .subtitle').text('Entrada');
     });
@@ -121,6 +153,10 @@ $(document).ready(() => {
     });
     // --- E-mail Menu ---
     // --- Chat Menu ---
+    $('#chatMenu ul li').click((event) => {
+        $('#chatMenu ul li.active').removeClass('active');
+        $(event.target).closest('li').addClass('active');
+    });
     $('#chatMenu #allContactsBtn').click((event) => {
         $('#chatContent .header .subtitle').text('Todos os Contatos');
     });
@@ -131,11 +167,27 @@ $(document).ready(() => {
         $('#chatContent .header .subtitle').text('Grupos');
     });
     // --- Chat Menu ---
+    // --- Calendar Menu ---
+    // ...
+    // --- Calendar Menu ---
+    // --- News Menu ---
+    $('#newsMenu ul li').click((event) => {
+        $('#newsMenu ul li.active').removeClass('active');
+        $(event.target).closest('li').addClass('active');
+    });
+    $('#newsMenu #allArticlesBtn').click((event) => {
+        $('#newsContent .header .subtitle').text('Todos artigos');
+    });
+    $('#newsMenu .feed').click((event) => {
+        let feedName = $(event.target).closest('li').text();
+        $('#newsContent .header .subtitle').text(feedName);
+    });
+    // --- News Menu ---
     // -------------- Menu --------------
 
     // --- E-mail ---
-    $('#emailInbox .resList li').click((event) => {
-        $('#emailInbox .resList li.selected').removeClass('selected');
+    $('#emailContent .container .resList li').click((event) => {
+        $('#emailContent .container .resList li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
     });
     $('#emailComposeNewBtn').click((event) => {
@@ -164,8 +216,8 @@ $(document).ready(() => {
     // --- E-mail ---
 
     // --- Chat ---
-    $('#chatContacts .resList li').click((event) => {
-        $('#chatContacts .resList li.selected').removeClass('selected');
+    $('#chatContent .container .resList li').click((event) => {
+        $('#chatContent .container .resList li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
     });
     $('#chatSendBtn').click((event) => {
@@ -193,6 +245,13 @@ $(document).ready(() => {
         }
     });
     // --- Calendar ---
+
+    // --- News ---
+    $('#newsContent .container .resList li').click((event) => {
+        $('#newsContent .container .resList li.selected').removeClass('selected');
+        $(event.target).closest('li').addClass('selected');
+    });
+    // --- News ---
 
     $('#accountForm').submit((event) => {
         event.preventDefault();
