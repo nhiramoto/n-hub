@@ -20,6 +20,12 @@ app.on('ready', () => {
     // mainWindow.webContents.openDevTools();
 });
 
+app.on('window-all-closed', () => {
+    if (process.platform !== "darwin") {
+        app.quit();
+    }
+});
+
 exports.loadDashboard = () => {
     if (mainWindow != null) {
         mainWindow.loadURL(`file://${__dirname}/html/dashboard.html`);
