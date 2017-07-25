@@ -48,6 +48,9 @@ table {
         font-weight: bold;
         text-align: center;
     }
+    input[type="text"], input[type="date"], input[type="url"], input[type="password"], textarea {
+        width: 100%;
+    }
 }
 
 input, textarea {
@@ -241,4 +244,8 @@ $chatBubbleTextColor: black;
     z-index: 1;
     right: -15px;
     top: 77px;
+}
+
+.warn {
+    color: red;
 }

@@ -186,8 +186,8 @@ body {
       transition: transform .5s ease; }
     #content .popup table {
       width: 100%; }
-      #content .popup table input[type="text"], #content .popup table input[type="url"], #content .popup table textarea {
-        width: 100%; }
+  #content #emailComposer h2 {
+    margin-top: 0; }
   #content .container {
     display: none;
     visibility: hidden;

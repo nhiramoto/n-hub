@@ -129,6 +129,13 @@ $(document).ready(() => {
             $('#settingsContent .header .subtitle').text('Notificações');
         }
     });
+    $('#newResourceBtn').click((event) => {
+        if (!$('#newResource').hasClass('active')) {
+            $('.container.active').removeClass('active');
+            $('.container#newResource').addClass('active');
+            $('#settingsContent .header .subtitle').text('Novo Recurso');
+        }
+    });
     // --- Settings Menu ---
 
     // --- E-mail Menu ---
@@ -184,6 +191,22 @@ $(document).ready(() => {
     });
     // --- News Menu ---
     // -------------- Menu --------------
+
+    // --- Settings ---
+    $('#resourcesForm').submit((event) => {
+        event.preventDefault();
+        globals.showMessage('Configurações de recursos', 'Recursos selecionados com sucesso.');
+    });
+    $('#notificationsForm').submit((event) => {
+        event.preventDefault();
+        globals.showMessage('Notificações de recursos', 'Notificações programadas com sucesso.');
+    });
+    $('#newResourceForm').submit((event) => {
+        event.preventDefault();
+        let resourceName = $('#newResourceForm input[name="nome"]').val();
+        globals.showMessage('Novo Recurso', 'Recurso \"' + resourceName + '\" submetido com sucesso. ');
+    });
+    // --- Settings ---
 
     // --- E-mail ---
     $('#emailContent .container .resList li').click((event) => {
@@ -293,14 +316,6 @@ $(document).ready(() => {
                 globals.showMessage('Senha atual', 'Insira a senha atual para alterá-la.');
             }
         }
-    });
-    $('#resourcesForm').submit((event) => {
-        event.preventDefault();
-        globals.showMessage('Configurações de recursos', 'Recursos selecionados com sucesso.');
-    });
-    $('#notificationsForm').submit((event) => {
-        event.preventDefault();
-        globals.showMessage('Notificações de recursos', 'Notificações programadas com sucesso.');
     });
 
     $('#emailBtn').trigger('click');

@@ -4,7 +4,8 @@
   "description": "Implementação do projeto da disciplina de IHM.",
   "main": "index.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "packlinux": "electron-packager . n-hub --platform=linux --arch=all"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/nhtoshiaki/n-hub#readme",
   "dependencies": {
     "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^8.7.2"
   }
 }

@@ -23,6 +23,7 @@
                     <li class="active " id="accountBtn">Conta e Sincronização</li>
                     <li id="resourcesBtn">Recursos</li>
                     <li id="notificationsBtn">Notificações</li>
+                    <li id="newResourceBtn">Novos Recurso</li>
                 </ul>
             </div>
             <div class="resMenu active" id="emailMenu">
@@ -141,10 +142,30 @@
                     <input type="submit" value="Salvar">
                 </form>
             </div>
+            <div class="container" id="newResource">
+                <form action="" id="newResourceForm">
+                    <table>
+                        <tr>
+                            <td>Nome do Recurso:</td>
+                            <td><input type="text" name="nome" placeholder="Nome"></td>
+                        </tr>
+                        <tr>
+                            <td>Descrição:</td>
+                            <td><textarea name="description" cols="30" rows="5"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><input type="reset" value="Limpar"></td>
+                            <td><input type="submit" value="Enviar"></td>
+                        </tr>
+                    </table>
+                </form>
+                <p><i class="warn fa fa-exclamation-triangle" aria-hidden="true"></i> O recurso submetido será avaliado para, possivelmente, ser incluso numa próxima versão.</p>
+            </div>
         </div>
         <div class="resContent active" id="emailContent">
             <div class="popup" id="emailComposer">
                 <form action="" id="emailComposerForm">
+                    <h2>Enviar E-mail</h2>
                     <table>
                         <tr>
                             <td>Para:</td>

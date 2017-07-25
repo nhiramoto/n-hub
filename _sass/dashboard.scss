@@ -247,12 +247,10 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         }
         table {
             width: 100%;
-            input[type="text"], input[type="url"], textarea {
-                width: 100%;
-            }
         }
     }
-    #emailComposer {
+    #emailComposer h2 {
+        margin-top: 0;
     }
     .container {
         display: none;

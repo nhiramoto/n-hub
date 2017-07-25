@@ -12,7 +12,7 @@ app.on('ready', () => {
     });
     // mainWindow.loadURL(`file://${__dirname}/html/welcome.html`);
     // Testando dashboard.html
-    mainWindow.loadURL(`file://${__dirname}/html/dashboard.html`);
+    mainWindow.loadURL(`file://${__dirname}/html/welcome.html`);
     mainWindow.on('ready-to-show', () => {
         mainWindow.show();
         mainWindow.focus();
