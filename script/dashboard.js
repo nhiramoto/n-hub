@@ -99,8 +99,8 @@ $(document).ready(() => {
 
     // -------------- Menu --------------
     $('#sidebar #menu .resMenu li').click((event) => {
-        $('#sidebar').toggleClass('hidden');
-        $('#showSidebar').toggleClass('hidden');
+        $('#sidebar').addClass('hidden');
+        $('#showSidebar').addClass('hidden');
     });
 
     // --- Settings Menu ---
@@ -209,8 +209,8 @@ $(document).ready(() => {
         globals.showMessage('E-mail', 'E-mail enviado para ' + to + ' com sucesso.');
         $('#emailComposer').removeClass('visible');
     });
-    $('#emailComposerForm #cancelBtn').click((event) => {
-    $('#emailComposerForm').trigger('reset');
+    $('#emailComposerForm .cancelBtn').click((event) => {
+        $('#emailComposerForm').trigger('reset');
         $('#emailComposer').removeClass('visible');
     });
     // --- E-mail ---
@@ -250,6 +250,31 @@ $(document).ready(() => {
     $('#newsContent .container .resList ul li').click((event) => {
         $('#newsContent .container .resList ul li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
+    });
+    $('#newsAddFeedBtn').click((event) => {
+        $('#newsAddFeedPopup').addClass('visible');
+    });
+    $('#newsAddFeedForm').submit((event) => {
+        event.preventDefault();
+        let feedName = $('#newsAddFeedForm input[name="nome"]').val();
+        let feedUrl = $('#newsAddFeedForm input[name="url"]').val();
+        $('#newsAddFeedForm').trigger('reset');
+        $('#newsMenu ul li.active').removeClass('active');
+        $('<li class="feed active">' + feedName + '</li>').click((event) => {
+            $('#newsMenu ul li.active').removeClass('active');
+            $(event.target).closest('li').addClass('active');
+            $('#newsContent .header .subtitle').text(feedName);
+            $('#sidebar').addClass('hidden');
+            $('#showSidebar').addClass('hidden');
+        }).insertAfter('#newsMenu ul li:last-child');
+        $('#newsAddFeedPopup').removeClass('visible');
+        $('#newsContent .header .subtitle').text(feedName);
+        $('#sidebar').addClass('hidden');
+        $('#showSidebar').addClass('hidden');
+    });
+    $('#newsAddFeedForm .cancelBtn').click((event) => {
+        $('#newsAddFeedPopup').removeClass('visible');
+        $('#allArticlesBtn').trigger('click');
     });
     // --- News ---
 

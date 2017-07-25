@@ -202,7 +202,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             // font-size: 24px;
             // line-height: 60px;
         }
-        #emailComposeNewBtn, #emailReplyBtn, #emailReplyAllBtn {
+        #emailComposeNewBtn, #emailReplyBtn, #emailReplyAllBtn, #newsAddFeedBtn {
             position: absolute;
             cursor: pointer;
             margin-right: 20px;
@@ -219,12 +219,15 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         #emailReplyAllBtn {
             right: 0;
         }
-        #emailComposeNewBtn:hover, #emailReplyBtn:hover, #emailReplyAllBtn:hover {
+        #newsAddFeedBtn {
+            right: 0;
+        }
+        #emailComposeNewBtn:hover, #emailReplyBtn:hover, #emailReplyAllBtn:hover, #newsAddFeedBtn:hover {
             color: $hoverColor;
             transition: color .1s ease;
         }
     }
-    #emailComposer {
+    .popup {
         position: fixed;
         width: 500px;
         top: 100px;
@@ -244,10 +247,12 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         }
         table {
             width: 100%;
-            input[type="text"], textarea {
+            input[type="text"], input[type="url"], textarea {
                 width: 100%;
             }
         }
+    }
+    #emailComposer {
     }
     .container {
         display: none;

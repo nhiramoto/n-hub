@@ -149,7 +149,7 @@ body {
       margin-left: 70px; }
     #content .header .subtitle {
       font-weight: 400; }
-    #content .header #emailComposeNewBtn, #content .header #emailReplyBtn, #content .header #emailReplyAllBtn {
+    #content .header #emailComposeNewBtn, #content .header #emailReplyBtn, #content .header #emailReplyAllBtn, #content .header #newsAddFeedBtn {
       position: absolute;
       cursor: pointer;
       margin-right: 20px;
@@ -162,10 +162,12 @@ body {
       right: 60px; }
     #content .header #emailReplyAllBtn {
       right: 0; }
-    #content .header #emailComposeNewBtn:hover, #content .header #emailReplyBtn:hover, #content .header #emailReplyAllBtn:hover {
+    #content .header #newsAddFeedBtn {
+      right: 0; }
+    #content .header #emailComposeNewBtn:hover, #content .header #emailReplyBtn:hover, #content .header #emailReplyAllBtn:hover, #content .header #newsAddFeedBtn:hover {
       color: #F5F688;
       transition: color .1s ease; }
-  #content #emailComposer {
+  #content .popup {
     position: fixed;
     width: 500px;
     top: 100px;
@@ -179,12 +181,12 @@ body {
     box-shadow: 0 5px 13px gray;
     transform: translateY(-800px);
     transition: transform .5s ease; }
-    #content #emailComposer.visible {
+    #content .popup.visible {
       transform: translateY(0);
       transition: transform .5s ease; }
-    #content #emailComposer table {
+    #content .popup table {
       width: 100%; }
-      #content #emailComposer table input[type="text"], #content #emailComposer table textarea {
+      #content .popup table input[type="text"], #content .popup table input[type="url"], #content .popup table textarea {
         width: 100%; }
   #content .container {
     display: none;

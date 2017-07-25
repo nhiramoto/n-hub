@@ -52,7 +52,7 @@
             <div class="resMenu" id="newsMenu">
                 <span class="header">Notícias</span>
                 <ul>
-                    <li class="active" id="allArticlesBtn">Todos artigos</li>
+                    <li class="feed active" id="allArticlesBtn">Todos artigos</li>
                     <li class="feed">Fonte 1</li>
                     <li class="feed">Fonte 2</li>
                     <li class="feed">Fonte 3</li>
@@ -143,7 +143,7 @@
             </div>
         </div>
         <div class="resContent active" id="emailContent">
-            <div id="emailComposer">
+            <div class="popup" id="emailComposer">
                 <form action="" id="emailComposerForm">
                     <table>
                         <tr>
@@ -164,7 +164,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><input id="cancelBtn" type="button" value="Cancelar"></td>
+                            <td><input class="cancelBtn" type="button" value="Cancelar"></td>
                             <td><input type="reset" value="Limpar" align="right"></td>
                             <td><input type="submit" value="Enviar" align="right"></td>
                         </tr>
@@ -357,7 +357,30 @@
             </div>
         </div>
         <div class="resContent" id="newsContent">
-            <div class="header"><span class="title">Notícias</span> / <span class="subtitle">Todos artigos</span></div>
+            <div class="popup" id="newsAddFeedPopup">
+                <h2>Adicionar Fonte</h2>
+                <form action="" id="newsAddFeedForm">
+                    <table>
+                        <tr>
+                            <td>Nome:</td>
+                            <td colspan="2"><input type="text" name="nome" placeholder="Nome" required></td>
+                        </tr>
+                        <tr>
+                            <td>URL:</td>
+                            <td colspan="2"><input type="url" name="url" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="cancelBtn" type="button" value="Cancelar"></td>
+                            <td><input type="reset" value="Limpar"></td>
+                            <td><input type="submit" value="Adicionar"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="header">
+                <span class="title">Notícias</span> / <span class="subtitle">Todos artigos</span>
+                <i id="newsAddFeedBtn" class="fa fa-plus-square-o" aria-hidden="true"></i>
+            </div>
             <div class="container" id="newsAllArticlesView">
                 <div class="resList">
                     <ul>
