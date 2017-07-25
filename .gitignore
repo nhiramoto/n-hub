@@ -60,3 +60,6 @@ typings/
 # Sass
 .sass-cache/
 **/*.map
+
+# electron-packager output folders
+out/
