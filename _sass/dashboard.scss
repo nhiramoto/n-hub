@@ -262,7 +262,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
         padding-right: 20px;
         padding-bottom: 20px;
         z-index: -1;
-        font-family: Roboto, Helvetica, Arial;
+        // font-family: Roboto, Helvetica, Arial;
         #resourcesForm input {
             margin: 10px;
         }
@@ -309,7 +309,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                         position: absolute;
                         left: 20px;
                         font-size: 14px;
-                        color: #222;
+                        color: #555;
                         background-color: inherit;
                         z-index: 1;
                     }
@@ -317,7 +317,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
                         position: absolute;
                         right: 20px;
                         font-size: 14px;
-                        color: #222;
+                        color: #555;
                     }
                     .itemTitle {
                         margin-top: 10px;
@@ -518,6 +518,7 @@ $navWidth: $sidebarWidth * (1 - $menuPercent);
             }
             .newsAuthor {
                 font-size: 20px;
+                font-style: italic;
                 color: #222;
             }
             .newsDate {

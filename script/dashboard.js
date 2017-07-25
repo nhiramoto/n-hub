@@ -216,8 +216,8 @@ $(document).ready(() => {
     // --- E-mail ---
 
     // --- Chat ---
-    $('#chatContent .container .resList li').click((event) => {
-        $('#chatContent .container .resList li.selected').removeClass('selected');
+    $('#chatContent .container .resList ul li').click((event) => {
+        $('#chatContent .container .resList ul li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
     });
     $('#chatSendBtn').click((event) => {
@@ -247,8 +247,8 @@ $(document).ready(() => {
     // --- Calendar ---
 
     // --- News ---
-    $('#newsContent .container .resList li').click((event) => {
-        $('#newsContent .container .resList li.selected').removeClass('selected');
+    $('#newsContent .container .resList ul li').click((event) => {
+        $('#newsContent .container .resList ul li.selected').removeClass('selected');
         $(event.target).closest('li').addClass('selected');
     });
     // --- News ---
