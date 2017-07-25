@@ -2,7 +2,7 @@
   "name": "n-hub",
   "version": "1.0.0",
   "description": "Implementação do projeto da disciplina de IHM.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron main.js",
     "packlinux": "electron-packager . n-hub --platform=linux --arch=all"
