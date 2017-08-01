@@ -1,3 +1,3 @@
 # n-hub
 
-Implementação do projeto da disciplina de IHM.
+Implementação da interface do projeto da disciplina de IHM.
