@@ -21,6 +21,7 @@
     "jquery": "^3.2.1"
   },
   "devDependencies": {
-    "electron-packager": "^8.7.2"
+    "electron-packager": "^8.7.2",
+    "electron-prebuilt": "^1.4.13"
   }
 }
