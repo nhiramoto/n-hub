@@ -2,7 +2,7 @@
 
 A simple mockup of an aggregator of e-mail, news, instant chat and calendar.
 
-This mockup was made with [Electron](https://electronjs.org/), [jQuery](https://jquery.com/) and styled from scratch with [Sass](https://sass-lang.com/).
+This mockup was made with [Electron](https://electronjs.org/), [jQuery](https://jquery.com/) and styled from scratch with [Sass](https://sass-lang.com/). Moreover, the icons were taken from [FontAwesome](https://fontawesome.com/).
 
 ## Screenshots
 
